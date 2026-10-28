@@ -64,7 +64,7 @@
   .nav { position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: 1px solid var(--line); }
   .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
   .logo { text-decoration: none; color: var(--navy); font-size: 36px; display: flex; align-items: center; }
-  .logo img { height: 42px; width: auto; }
+  .logo img { height: 55px; width: 180px; object-fit: contain; }
   .menu { display: flex; align-items: center; gap: 30px; }
   .menu a { font-family: var(--display); font-weight: 700; font-size: 18px; text-transform: uppercase; text-decoration: none; color: var(--navy); letter-spacing: 0.5px; }
   .menu a:not(.btn):hover { color: var(--fairway-deep); }
@@ -436,6 +436,7 @@ section{scroll-margin-top:90px}
 
 /* Launch-readiness, responsiveness and accessibility */
 :focus-visible{outline:3px solid #ffce00!important;outline-offset:4px}a,button,summary,input,select,textarea{touch-action:manipulation}button,input,select,textarea{font:inherit}.form-foot small a{font-weight:700;text-decoration:underline}.error.show{display:block;background:#fff3dc;border-left:4px solid #bb6b00;padding:12px 14px;line-height:1.5}.plan .price-note{font-weight:600;opacity:.9}.spots{max-width:100%;flex-wrap:wrap;justify-content:center;text-align:center}.story-tile{background-color:#275442}footer .links{flex-wrap:wrap}@media(max-width:700px){.hero .wrap.hero-inner{min-height:650px}.hero .cta .btn{justify-content:center}.hero-description{max-width:35ch}.format-grid strong{line-height:1.4}.story-grid{gap:10px}.story-copy{padding-right:0}.story-tile{min-height:230px}.story-tile strong{font-size:28px}.form-foot{gap:16px}}@media(max-width:420px){.hero h1{font-size:68px}.hero .btn{width:100%}.hero .cta{flex-direction:column}.format-grid>div{padding-left:8px;padding-right:8px}}
+@media(max-width:700px){.logo img{width:150px;height:48px}}
 </style>
 </head>
 <body>
@@ -443,7 +444,7 @@ section{scroll-margin-top:90px}
 <header class="nav">
   <div class="wrap">
     <!-- To use the real logo: replace the span with <img src="logo.png" alt="Golfsies"> -->
-    <a class="logo" href="#top" aria-label="Golfsies home"><span class="wordmark">Golfsies<span class="reg">®</span></span></a>
+    <a class="logo" href="#top" aria-label="Golfsies home"><img src="golfsies-logo.svg" alt="Golfsies" width="180" height="60"></a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
