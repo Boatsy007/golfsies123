@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Golfsies | The Gold Coast's 6-Hole Social Golf League</title>
-<meta name="description" content="3 Clubs. 6 Holes. 1 Hour. Then the Party Hole. Golfsies is a 6-hole team golf league launching on the Gold Coast. Register your team's interest.">
+<meta name="description" content="3 Clubs. 6 Holes. 1 Hour. Then the Party Hole. Own a Golfsies team, enter 6-hole tournaments on the Gold Coast and climb the rankings.">
 <meta property="og:title" content="Golfsies | 3 Clubs. 6 Holes. 1 Hour.">
-<meta property="og:description" content="The Gold Coast's 6-hole social golf league. Register your team's interest for Season 1.">
+<meta property="og:description" content="Own a team, enter 6-hole tournaments and climb the Golfsies Rankings. Claim your Founding Team name free.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -156,6 +156,50 @@
   .hole.party { background: rgba(242,127,178,0.18); border: 1px solid var(--pink); }
   .hole.party b { color: var(--pink); }
   .screen .go { margin: 8px 12px 18px; background: var(--fairway); color: var(--navy-ink); text-align: center; font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: 15px; padding: 11px; border-radius: 8px; }
+  .hole .pts { text-align: center; border-radius: 4px; font-weight: 800; font-size: 12px; padding: 2px 0; background: var(--fairway); color: var(--navy-ink); }
+  .hole .pts.zero { background: rgba(255,255,255,0.15); color: #fff; }
+  .total { display: flex; justify-content: space-between; align-items: baseline; margin: 6px 12px 0; padding: 10px 8px 0; border-top: 1px solid rgba(255,255,255,0.15); font-family: var(--display); font-weight: 800; text-transform: uppercase; color: #fff; font-size: 16px; }
+  .total b { font-size: 26px; color: var(--fairway); }
+
+  /* Own a team (plans) */
+  .own-head { text-align: center; max-width: 720px; margin: 0 auto 44px; }
+  .own-head p { color: #2a333d; margin: 0; }
+  .spots { display: inline-flex; align-items: center; gap: 12px; margin-top: 22px; background: var(--cream); border: 1.5px solid var(--navy); border-radius: 999px; padding: 8px 18px; font-family: var(--display); font-weight: 700; text-transform: uppercase; font-size: 18px; color: var(--navy); }
+  .spots .meter { width: 120px; height: 8px; background: rgba(27,53,80,0.15); border-radius: 999px; overflow: hidden; }
+  .spots .meter i { display: block; height: 100%; background: var(--fairway-deep); }
+  .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: stretch; }
+  .plan { background: #fff; border: 1.5px solid var(--line); border-radius: 8px; padding: 28px 24px; display: flex; flex-direction: column; }
+  .plan.feature { background: var(--navy); color: #fff; border-color: var(--navy); box-shadow: 8px 8px 0 var(--fairway); }
+  .plan .kicker { font-family: var(--display); font-weight: 700; text-transform: uppercase; font-size: 15px; letter-spacing: 1px; color: var(--fairway-deep); }
+  .plan.feature .kicker { color: var(--fairway); }
+  .plan h3 { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: 34px; line-height: 1; margin: 6px 0 14px; }
+  .price { font-family: var(--display); font-weight: 800; font-size: 60px; line-height: 1; }
+  .price small { font-size: 20px; font-weight: 700; opacity: 0.8; }
+  .price-note { font-size: 13px; opacity: 0.75; margin: 6px 0 18px; }
+  .plan ul { list-style: none; padding: 0; margin: 0 0 24px; flex: 1; }
+  .plan li { padding: 8px 0 8px 28px; position: relative; border-top: 1px solid var(--line); font-size: 15px; }
+  .plan.feature li { border-color: rgba(255,255,255,0.15); }
+  .plan li::before { content: "✓"; position: absolute; left: 2px; top: 8px; font-weight: 800; color: var(--fairway-deep); }
+  .plan.feature li::before { color: var(--fairway); }
+  .plan .btn { justify-content: center; }
+  .plan.feature .btn { background: var(--fairway); border-color: var(--fairway); color: var(--navy-ink); }
+  .plan.feature .btn:hover { background: #cad78a; }
+  .own-foot { text-align: center; color: var(--muted); font-size: 14px; margin: 26px auto 0; max-width: 70ch; }
+
+  /* Tournament calendar */
+  .events { list-style: none; margin: 0; padding: 0; background: #fff; }
+  .events li { display: grid; grid-template-columns: 92px 1fr auto; gap: 16px; align-items: center; padding: 16px 14px; border-bottom: 1px solid var(--line); }
+  .events li:nth-child(even) { background: var(--cream); }
+  .events .when { font-family: var(--display); font-weight: 800; text-transform: uppercase; color: var(--navy); font-size: 18px; line-height: 1; text-align: center; border: 2px solid var(--navy); border-radius: 6px; padding: 8px 4px; }
+  .events .when small { display: block; font-size: 12px; color: var(--muted); margin-top: 3px; }
+  .events h4 { margin: 0; font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: 21px; color: var(--navy); line-height: 1.05; }
+  .events p { margin: 3px 0 0; font-size: 14px; color: var(--muted); }
+  .events .badge { font-family: var(--display); font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 0.5px; padding: 4px 10px; border-radius: 999px; background: var(--fairway); color: var(--navy-ink); white-space: nowrap; }
+  .events .badge.free { background: var(--pink); }
+  .events .badge.tba { background: transparent; border: 1.5px solid var(--navy); color: var(--navy); }
+  .consent { grid-column: 1 / -1; display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: #3a434d; background: var(--cream); padding: 12px 14px; border-radius: 4px; }
+  .consent input { margin-top: 3px; width: 18px; height: 18px; flex: none; }
+  .hero-sub { font-family: var(--display); font-weight: 600; text-transform: uppercase; font-size: clamp(20px, 2.4vw, 26px); color: rgba(255,255,255,0.85); margin: 22px 0 0; letter-spacing: 0.4px; }
 
   /* Teams map */
   .teams { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 40px; align-items: center; }
@@ -287,6 +331,7 @@
   @media (max-width: 1000px) {
     .intro, .how-grid, .teams, .tables, .kits { grid-template-columns: 1fr; }
     .rules-grid { grid-template-columns: repeat(3, 1fr); }
+    .plans { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
     .menu { display: none; position: absolute; top: 72px; left: 0; right: 0; background: #fff; flex-direction: column; align-items: stretch; gap: 0; border-bottom: 1px solid var(--line); padding: 8px 24px 20px; }
     .menu.open { display: flex; }
     .menu a { padding: 12px 0; border-bottom: 1px solid var(--line); }
@@ -310,6 +355,9 @@
     .feed li { flex-wrap: wrap; gap: 8px 12px; }
     .feed .date { min-width: 0; }
     .hole { grid-template-columns: 48px 1fr 1fr 30px; font-size: 13px; }
+    .events li { grid-template-columns: 72px 1fr; }
+    .events .badge { grid-column: 2; justify-self: start; }
+    .spots { font-size: 16px; }
     table { min-width: 340px; font-size: 14px; }
     table.fmt { min-width: 0; }
     thead th, tbody td { padding: 10px 6px; }
@@ -328,20 +376,20 @@
     </button>
     <nav class="menu" id="menu">
       <a href="#how">How it works</a>
-      <a href="#teams">Teams</a>
-      <a href="#ladder">Ladder</a>
+      <a href="#own">Own a team</a>
+      <a href="#tournaments">Tournaments</a>
+      <a href="#rankings">Rankings</a>
       <a href="#kits">Kits</a>
-      <a href="#news">News</a>
       <a href="#partners">Partner</a>
-      <a class="btn small" href="#register">Register</a>
+      <a class="btn small" href="#register">Claim your team</a>
     </nav>
   </div>
 </header>
 
 <div class="announce" id="announce">
   <div class="wrap">
-    <p>Season 1 · Gold Coast · Summer 2026–27 | Team registrations opening soon</p>
-    <a class="pill" href="#register">Register interest</a>
+    <p>Founding Teams · Gold Coast · Only 16 spots | Reserve your team name free</p>
+    <a class="pill" href="#register">Claim your team</a>
     <button class="x" aria-label="Dismiss announcement" onclick="document.getElementById('announce').remove()">×</button>
   </div>
 </div>
@@ -368,13 +416,14 @@
     <div class="wrap">
       <div class="season-badge">
         <span class="wordmark">Golfsies</span>
-        <span class="s"><small>Season 1</small>Gold Coast</span>
+        <span class="s"><small>Founding Teams</small>Gold Coast</span>
       </div>
       <h1>3 Clubs.<br>6 Holes.<br>1 Hour.</h1>
       <div class="highlight"><span>Then the</span><em>Party Hole</em></div>
+      <p class="hero-sub">Own a team · Enter tournaments · Climb the rankings</p>
       <div class="cta">
-        <a class="btn light" href="#register">Register your team <span class="arr">→</span></a>
-        <a class="btn ghost" href="#how">How it works</a>
+        <a class="btn light" href="#register">Claim your team name <span class="arr">→</span></a>
+        <a class="btn ghost" href="#own">Own a team</a>
       </div>
     </div>
   </section>
@@ -389,9 +438,9 @@
       </div>
       <div>
         <h2>The Gold Coast's 6-hole social golf league</h2>
-        <p>Golfsies is golf reimagined: a short-format team league built for people who'd rather play an hour after work than lose a whole Saturday.</p>
-        <p>Teams of mates and workmates go head to head every week on short twilight holes, with easy-play rules, team kits, a ladder, finals, and a Party Hole to finish every round.</p>
-        <p style="margin-top:24px"><a class="btn" href="#register">Register interest <span class="arr">→</span></a></p>
+        <p>Golfsies is golf reimagined: short, social team golf for people who'd rather play an hour after work than lose a whole Saturday.</p>
+        <p>Own a team, build your roster, and enter Golfsies tournaments across the Gold Coast. Every event is 6 short holes with easy-play rules and a Party Hole to finish, and every result counts towards the Golfsies Rankings.</p>
+        <p style="margin-top:24px"><a class="btn" href="#register">Claim your team name <span class="arr">→</span></a></p>
       </div>
     </div>
   </section>
@@ -403,35 +452,90 @@
       <div class="how-grid">
         <div>
           <div class="tag">Never played? Perfect.</div>
-          <div class="how-item"><h3>Build your crew</h3><p>Teams of 4 on the course, with up to 6 on your roster</p></div>
-          <div class="how-item"><h3>Grab 3 clubs</h3><p>Any three you like. No clubs? Borrow a loan set from us</p></div>
-          <div class="how-item"><h3>Play 6 holes</h3><p>Team scramble on 100–130m holes, done in under an hour</p></div>
-          <div class="how-item"><h3>Hit the Party Hole</h3><p>Hole 6 is worth double points, with music and drinks at the clubhouse</p></div>
-          <a class="btn on-dark" href="#register">Register your team <span class="arr">→</span></a>
+          <div class="how-item"><h3>Own a team</h3><p>A monthly membership makes the team name, crest and ranking yours</p></div>
+          <div class="how-item"><h3>Build your roster</h3><p>Up to 8 players on the roster, with 4 playing at each event</p></div>
+          <div class="how-item"><h3>Enter tournaments</h3><p>6 holes, 3 clubs, team scramble, then the Party Hole for double points</p></div>
+          <div class="how-item"><h3>Climb the rankings</h3><p>Every event earns ranking points towards the Golfsies Championship</p></div>
+          <a class="btn on-dark" href="#register">Claim your team name <span class="arr">→</span></a>
         </div>
 
         <div class="phone" aria-label="Example Golfsies match scorecard">
           <div class="screen">
             <div class="top">
-              <div class="lbl">Matchday · Week 3 · Example</div>
+              <div class="lbl">Golfsies Cup · Example scorecard</div>
               <div class="vs">
-                <div>Drop Bears<small>Home</small></div>
-                <div class="score">5 – 3</div>
-                <div style="text-align:right">Galahs<small>Away</small></div>
+                <div>Drop Bears<small>Team scramble</small></div>
+                <div style="text-align:right">2nd<small>of 16 teams</small></div>
               </div>
             </div>
             <div class="holes">
-              <div class="hole"><b>Hole 1</b><span>Par 3</span><span>112m</span><span class="r w">W</span></div>
-              <div class="hole"><b>Hole 2</b><span>Par 3</span><span>124m</span><span class="r l">L</span></div>
-              <div class="hole"><b>Hole 3</b><span>Par 3</span><span>101m</span><span class="r h">H</span></div>
-              <div class="hole"><b>Hole 4</b><span>Par 3</span><span>130m</span><span class="r w">W</span></div>
-              <div class="hole"><b>Hole 5</b><span>Par 3</span><span>118m</span><span class="r l">L</span></div>
-              <div class="hole party"><b>Party</b><span>2× pts</span><span>115m</span><span class="r w">W</span></div>
+              <div class="hole"><b>Hole 1</b><span>Par 3</span><span>112m</span><span class="pts">2</span></div>
+              <div class="hole"><b>Hole 2</b><span>Par 3</span><span>124m</span><span class="pts">3</span></div>
+              <div class="hole"><b>Hole 3</b><span>Par 3</span><span>101m</span><span class="pts zero">1</span></div>
+              <div class="hole"><b>Hole 4</b><span>Par 3</span><span>130m</span><span class="pts">2</span></div>
+              <div class="hole"><b>Hole 5</b><span>Par 3</span><span>118m</span><span class="pts">2</span></div>
+              <div class="hole party"><b>Party</b><span>2× pts</span><span>115m</span><span class="pts">6</span></div>
             </div>
+            <div class="total"><span>Total points</span><b>16</b></div>
             <div class="go">Submit scorecard</div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- OWN A TEAM -->
+  <section id="own">
+    <div class="wrap">
+      <div class="own-head">
+        <h2 class="sec-title">Own a team</h2>
+        <p>Your team name, your crest, your roster, your ranking. Founding Teams lock in the lowest price for as long as they stay members.</p>
+        <div class="spots"><span id="spots-text">16 of 16 Founding spots left</span><span class="meter"><i id="spots-bar" style="width:100%"></i></span></div>
+      </div>
+      <div class="plans">
+        <div class="plan feature">
+          <span class="kicker">Founding Team · Limited to 16</span>
+          <h3>Team Membership</h3>
+          <div class="price">$59<small>/month</small></div>
+          <p class="price-note">Founding price, locked in. Nothing to pay until the first event is confirmed.</p>
+          <ul>
+            <li>Your team name and crest, reserved in Golfsies</li>
+            <li>Team page with roster, results and ranking</li>
+            <li>Roster of up to 8 players</li>
+            <li>Members-only tournament entry</li>
+            <li>Golfsies Rankings points at every event</li>
+            <li>Founding Team badge and member kit pricing</li>
+          </ul>
+          <a class="btn" href="#register">Claim your team name <span class="arr">→</span></a>
+        </div>
+        <div class="plan">
+          <span class="kicker">Members only</span>
+          <h3>Tournament Entry</h3>
+          <div class="price">$99<small>/team</small></div>
+          <p class="price-note">Per event, for a team of 4. That's about $25 each.</p>
+          <ul>
+            <li>6-hole team scramble, about 2 hours with the Party Hole</li>
+            <li>Shotgun start, so everyone finishes together</li>
+            <li>Trophies, prizes and ranking points</li>
+            <li>Loan clubs available</li>
+          </ul>
+          <a class="btn outline" href="#tournaments">See tournaments <span class="arr">→</span></a>
+        </div>
+        <div class="plan">
+          <span class="kicker">Not sure yet?</span>
+          <h3>Try Golfsies Day</h3>
+          <div class="price">Free</div>
+          <p class="price-note">Bring your crew and play the format before you commit.</p>
+          <ul>
+            <li>Play a full 6-hole round</li>
+            <li>No membership needed</li>
+            <li>Meet the other founding teams</li>
+            <li>Claim your name on the day</li>
+          </ul>
+          <a class="btn outline" href="#register">Get an invite <span class="arr">→</span></a>
+        </div>
+      </div>
+      <p class="own-foot">Founding prices will be confirmed before the first event. Reserving a team name is free and doesn't commit you to anything. Full membership terms, including how to cancel, will be sent before any payment is taken.</p>
     </div>
   </section>
 
@@ -440,9 +544,9 @@
     <div class="wrap teams">
       <div class="copy">
         <h2 class="sec-title">The teams</h2>
-        <p>Pick a name, design a crest, get a kit and represent your suburb. Each league is capped at 8 teams, and rivalries start on week one.</p>
+        <p>Pick a name, design a crest, get a kit and represent your suburb. Once a name is claimed it's yours, and no other team can use it.</p>
         <a class="btn" href="#register">Claim your team <span class="arr">→</span></a>
-        <p class="note">Example teams shown. Season 1 teams will be announced once registrations open.</p>
+        <p class="note">Example teams shown. Founding Teams will be revealed as names are claimed.</p>
       </div>
       <div class="map">
         <svg viewBox="0 0 520 560" role="img" aria-label="Map of the Gold Coast with example Golfsies teams">
@@ -482,43 +586,39 @@
     </div>
   </section>
 
-  <!-- LADDER + FORMAT -->
-  <section id="ladder">
+  <!-- TOURNAMENTS + RANKINGS -->
+  <section id="tournaments">
     <div class="wrap">
-      <div class="tbl-note"><span>Preview: every team starts Season 1 on zero.</span><a href="#faq">How ladder points work →</a></div>
+      <div class="tbl-note"><span>Dates and venues will be announced to Founding Teams first.</span><a href="#faq">How ranking points work →</a></div>
       <div class="tables">
         <div>
-          <h3 class="bar-title">Season 1 Ladder</h3>
+          <h3 class="bar-title">Tournament Calendar</h3>
+          <ul class="events">
+            <li><div class="when">TBA<small>First</small></div><div><h4>Try Golfsies Day</h4><p>Free launch event. Play the format, meet the teams, claim your name.</p></div><span class="badge free">Free</span></li>
+            <li><div class="when">TBA<small>Monthly</small></div><div><h4>Golfsies Cup</h4><p>The monthly members' tournament for 8–16 teams. Ranking points on offer.</p></div><span class="badge">Members</span></li>
+            <li><div class="when">TBA<small>Special</small></div><div><h4>Corporate Cup</h4><p>Company teams only. Your logo on the kits and bragging rights in the office.</p></div><span class="badge">Members</span></li>
+            <li><div class="when">TBA<small>Special</small></div><div><h4>Ladies Cup &amp; Over 55s Cup</h4><p>Dedicated events with daytime tee-offs.</p></div><span class="badge tba">Coming</span></li>
+            <li><div class="when">TBA<small>Finale</small></div><div><h4>Golfsies Championship</h4><p>The season finale for the top-ranked teams. The trophy, the title and a year of bragging rights.</p></div><span class="badge tba">Top teams</span></li>
+          </ul>
+        </div>
+        <div id="rankings">
+          <h3 class="bar-title">Golfsies Rankings</h3>
           <div class="tbl-wrap">
             <table>
-              <thead><tr><th>Pos</th><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>Pts</th></tr></thead>
+              <thead><tr><th>Pos</th><th>Team</th><th>Events</th><th>Wins</th><th>Points</th></tr></thead>
               <tbody>
-                <tr><td>1</td><td><span class="t-team"><span class="crest" style="background:#d9366b">BB</span>Birdie Bandits</span></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>2</td><td><span class="t-team"><span class="crest" style="background:#2f6fd0">HI</span>Hitters</span></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>3</td><td><span class="t-team"><span class="crest" style="background:#1e9bd7">ST</span>Stingers</span></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>4</td><td><span class="t-team"><span class="crest" style="background:#6b7b8c">BA</span>Barras</span></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>5</td><td><span class="t-team"><span class="crest" style="background:#3e8e4e">DB</span>Drop Bears</span></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>6</td><td><span class="t-team"><span class="crest" style="background:#f27fb2;color:#1b3550">GA</span>Galahs</span></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>7</td><td><span class="t-team"><span class="crest" style="background:#c8302e">SK</span>Strikers</span></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>8</td><td><a class="t-team" href="#register"><span class="crest you">?</span>Your team?</a></td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+                <tr><td>–</td><td><span class="t-team"><span class="crest" style="background:#d9366b;color:#fff">BB</span>Birdie Bandits</span></td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>–</td><td><span class="t-team"><span class="crest" style="background:#2f6fd0;color:#fff">HI</span>Hitters</span></td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>–</td><td><span class="t-team"><span class="crest" style="background:#1e9bd7;color:#fff">ST</span>Stingers</span></td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>–</td><td><span class="t-team"><span class="crest" style="background:#6b7b8c;color:#fff">BA</span>Barras</span></td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>–</td><td><span class="t-team"><span class="crest" style="background:#3e8e4e;color:#fff">DB</span>Drop Bears</span></td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>–</td><td><span class="t-team"><span class="crest" style="background:#f27fb2;color:#1b3550">GA</span>Galahs</span></td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>–</td><td><span class="t-team"><span class="crest" style="background:#c8302e;color:#fff">SK</span>Strikers</span></td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>–</td><td><a class="t-team" href="#register"><span class="crest you">?</span>Your team?</a></td><td>–</td><td>–</td><td>–</td></tr>
               </tbody>
             </table>
           </div>
-        </div>
-        <div>
-          <h3 class="bar-title">Season Format</h3>
-          <div class="tbl-wrap">
-            <table class="fmt">
-              <tbody>
-                <tr><td>Weeks 1–8</td><td>Regular season. One head-to-head match every week on a twilight weeknight.</td></tr>
-                <tr><td>Week 9</td><td>Semi-finals: the top 4 teams on the ladder.</td></tr>
-                <tr><td>Week 10</td><td>Grand final, trophy and presentation night.</td></tr>
-                <tr><td>Match play</td><td>Win a hole and you get 1 point. The Party Hole is worth 2.</td></tr>
-                <tr><td>Ladder points</td><td>Win 3 · Draw 2 · Show up 1. Turning up always pays.</td></tr>
-                <tr><td>Teams</td><td>4 on the course, up to 6 on the roster. Capped at 8 teams per league.</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <p style="font-size:13px;color:var(--muted);margin:10px 0 0">Example teams shown. Every team starts on zero.</p>
         </div>
       </div>
     </div>
@@ -531,7 +631,7 @@
       <div class="kits">
         <div class="kits-copy">
           <div class="big">Look the part<small>Official Golfsies team kits</small></div>
-          <p>Every team plays in a matching kit with its own name and crest. Company teams can put their logo on the front. Kits are made to order before each season.</p>
+          <p>Every team plays in a matching kit with its own name and crest. Company teams can put their logo on the front. Kits are made to order, with member pricing for team owners.</p>
           <a class="btn" href="#register">Get your team kitted out <span class="arr">→</span></a>
         </div>
         <div class="shirts">
@@ -562,7 +662,7 @@
         <div class="rcard" style="--c:#2f6fd0"><div class="strip"><span class="num">6</span></div><div class="name"><div><span>Short</span><b>Holes</b></div></div><p>Holes of 100–130m, played from adjusted tees. The round is done in under an hour.</p></div>
         <div class="rcard" style="--c:#d9366b"><div class="strip"><span class="num">4</span></div><div class="name"><div><span>Team</span><b>Scramble</b></div></div><p>Everyone hits, the team picks the best shot, and you all play from there.</p></div>
         <div class="rcard" style="--c:#c8302e"><div class="strip"><span class="num">1m</span></div><div class="name"><div><span>Free</span><b>Drop</b></div></div><p>Missed the fairway? Drop it one metre back onto the short grass with no penalty.</p></div>
-        <div class="rcard" style="--c:#f27fb2"><div class="strip"><span class="num">2×</span></div><div class="name"><div><span>Party</span><b>Hole</b></div></div><p>Hole 6 is worth double points, so no match is over until the last putt.</p></div>
+        <div class="rcard" style="--c:#f27fb2"><div class="strip"><span class="num">2×</span></div><div class="name"><div><span>Party</span><b>Hole</b></div></div><p>Hole 6 scores double points, so no tournament is over until the last putt.</p></div>
       </div>
     </div>
   </section>
@@ -578,11 +678,11 @@
         <button data-f="team">Teams</button>
       </div>
       <ul class="feed" id="feed">
-        <li data-k="announce"><span class="ico">+</span><span class="date">Now</span><span><b>Team interest registrations</b> are open for Season 1 on the Gold Coast</span></li>
+        <li data-k="team"><span class="ico">+</span><span class="date">Now</span><span><b>Founding Team names</b> are open. Reserve yours free (16 spots).</span></li>
         <li data-k="announce"><span class="ico">+</span><span class="date">25/05/26</span><span><b>Golfsies®</b> is officially a registered trade mark</span></li>
-        <li data-k="venue"><span class="ico soon">…</span><span class="date">Coming</span><span><b>Season 1 venue</b> to be announced</span></li>
-        <li data-k="team"><span class="ico soon">…</span><span class="date">Coming</span><span><b>Launch night</b> for the first teams, with the format played live</span></li>
-        <li data-k="team"><span class="ico soon">…</span><span class="date">Coming</span><span><b>Season 1 teams</b> revealed once registrations open</span></li>
+        <li data-k="venue"><span class="ico soon">…</span><span class="date">Coming</span><span><b>First tournament venue</b> to be announced</span></li>
+        <li data-k="announce"><span class="ico soon">…</span><span class="date">Coming</span><span><b>Try Golfsies Day</b>, a free launch event with the format played live</span></li>
+        <li data-k="team"><span class="ico soon">…</span><span class="date">Coming</span><span><b>Founding Teams</b> revealed as names are claimed</span></li>
       </ul>
     </div>
   </section>
@@ -599,11 +699,16 @@
         details[open] summary::after { content: "–"; }
         details p { color: #3a434d; margin: 10px 0 0; }
       </style>
+      <details><summary>What do I get with a team membership?</summary><p>Your team name and crest reserved in Golfsies, a team page, a roster of up to 8 players, members-only tournament entry, ranking points at every event, and member kit pricing.</p></details>
+      <details><summary>Do I pay anything now?</summary><p>No. Reserving a Founding Team name is free. We'll confirm pricing and send the membership terms before the first event, and you only pay once you choose to join.</p></details>
+      <details><summary>Can I cancel?</summary><p>Yes. Memberships are month to month, and the full terms, including how to cancel, will be sent before any payment is taken.</p></details>
+      <details><summary>Who owns the team?</summary><p>The person who takes out the membership is the team owner. They hold the right to that team name and crest within Golfsies, and they manage the roster. Golfsies® itself remains a registered trade mark of Golfsies.</p></details>
       <details><summary>Do I need to be good at golf?</summary><p>No. In a team scramble everyone plays the best shot, so beginners and regular golfers contribute on every hole.</p></details>
       <details><summary>Do I need my own clubs?</summary><p>You only need three. If you don't have any, we'll have loan sets at the course.</p></details>
-      <details><summary>Where and when is it played?</summary><p>On twilight weeknights at a Gold Coast course, finishing before dark. We're locking in venues now, and registered teams will be the first to hear.</p></details>
-      <details><summary>How much does it cost?</summary><p>Pricing will be released when registrations open. Teams who register interest now will get early-bird pricing.</p></details>
-      <details><summary>How do ladder points work?</summary><p>Each match is match play: win a hole and you get 1 point, and the Party Hole is worth 2. The team with the most points wins the match. On the ladder, a win is worth 3, a draw 2, and turning up 1.</p></details>
+      <details><summary>Where and when are tournaments played?</summary><p>At Gold Coast courses, on twilight weeknights in summer and weekend afternoons in winter. We're locking in venues now, and Founding Teams will hear first.</p></details>
+      <details><summary>How does scoring work?</summary><p>Each team plays a scramble and scores points on every hole: 1 for a bogey, 2 for a par and 3 for a birdie. The Party Hole doubles your points. The team with the most points wins the tournament.</p></details>
+      <details><summary>How do ranking points work?</summary><p>Every team earns ranking points at each tournament based on where it finishes, plus points for turning up. The top-ranked teams at the end of the season qualify for the Golfsies Championship.</p></details>
+      <details><summary>What are the prizes?</summary><p>Trophies, kit, sponsor prizes and the bragging rights that come with them. Details will be announced for each event.</p></details>
       <details><summary>What if I don't have a team?</summary><p>Register as a solo player or a pair and we'll match you with others to make up a team.</p></details>
     </div>
   </section>
@@ -612,17 +717,21 @@
   <section class="register" id="register">
     <div class="wrap">
       <div class="head">
-        <h2>Team registrations, venue news and launch night invites</h2>
-        <p>Register your team's interest for Season 1. There's no payment and no commitment. You'll get first access to spots and early-bird pricing.</p>
+        <h2>Claim your Founding Team name</h2>
+        <p>Reserve your team name free. There's no payment and no commitment. You'll get the founding price, first entry to tournaments, and an invite to the Try Golfsies Day.</p>
       </div>
       <div class="form-card">
         <form id="interest-form" novalidate>
           <div class="field full">
-            <label for="team">Team name <span class="opt">(you can change it later)</span></label>
-            <input type="text" id="team" name="team_name" placeholder="e.g. The Drop Bears" autocomplete="off">
+            <label for="team">Team name you want to claim *</label>
+            <input type="text" id="team" name="team_name" required placeholder="e.g. The Drop Bears" autocomplete="off">
+          </div>
+          <div class="field full">
+            <label for="team2">Back-up name <span class="opt">(in case your first choice is taken)</span></label>
+            <input type="text" id="team2" name="backup_name" autocomplete="off">
           </div>
           <div class="field">
-            <label for="name">Captain's name *</label>
+            <label for="name">Team owner's name *</label>
             <input type="text" id="name" name="captain_name" required autocomplete="name">
           </div>
           <div class="field">
@@ -643,7 +752,7 @@
             </div>
           </div>
           <div class="field full">
-            <span class="legend">Which nights could you play? <span class="opt">(pick any)</span></span>
+            <span class="legend">When could your team play tournaments? <span class="opt">(pick any)</span></span>
             <div class="pick">
               <label><input type="checkbox" name="nights" value="Mon"><span>Mon</span></label>
               <label><input type="checkbox" name="nights" value="Tue"><span>Tue</span></label>
@@ -688,17 +797,18 @@
             <label for="msg">Anything else? <span class="opt">(optional)</span></label>
             <textarea id="msg" name="message" placeholder="Questions, ideas, or the trash talk you've prepared for the grand final"></textarea>
           </div>
+          <label class="consent"><input type="checkbox" id="consent" name="understands_free_reservation" value="yes"><span>I understand this reserves my team name for free. Names are first in, first served and confirmed by email. Membership is optional, and I won't be charged unless I choose to join after receiving the terms.</span></label>
           <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
           <p class="error" id="form-error" role="alert"></p>
           <div class="form-foot">
             <small>We'll only use your details to contact you about Golfsies. No spam, ever.</small>
-            <button class="btn" type="submit" id="submit-btn">Count us in <span class="arr">→</span></button>
+            <button class="btn" type="submit" id="submit-btn">Claim our name <span class="arr">→</span></button>
           </div>
         </form>
         <div class="success" id="success" role="status" aria-live="polite">
           <div class="wordmark">Golfsies</div>
-          <h3>You're on the list!</h3>
-          <p>We'll be in touch soon with venues, dates and early-bird pricing. Now go and pick your three clubs.</p>
+          <h3>Name request received!</h3>
+          <p>We'll email you to confirm your team name, along with your Try Golfsies Day invite and founding pricing. Now go and pick your three clubs.</p>
         </div>
       </div>
     </div>
@@ -750,7 +860,7 @@
     <div class="wrap">
       <div class="big">See you at the Party Hole</div>
       <div class="links">
-        <a href="#how">How it works</a><i>/</i><a href="#faq">FAQ</a><i>/</i><a href="#partners">Partnerships</a><i>/</i><a href="#register">Register</a><i>/</i><a href="mailto:rohan@golfsies.com.au">Contact</a>
+        <a href="#own">Own a team</a><i>/</i><a href="#tournaments">Tournaments</a><i>/</i><a href="#rankings">Rankings</a><i>/</i><a href="#faq">FAQ</a><i>/</i><a href="#partners">Partnerships</a><i>/</i><a href="mailto:rohan@golfsies.com.au">Contact</a>
       </div>
       <div class="social">
         <span class="wordmark">Golfsies</span>
@@ -769,8 +879,13 @@
   // If left empty, submissions open the visitor's email app addressed to FALLBACK_EMAIL instead.
   const FORM_ENDPOINT = "";
   const FALLBACK_EMAIL = "rohan@golfsies.com.au";
+  // Update by hand as Founding Team names are confirmed.
+  const FOUNDING_SPOTS_TOTAL = 16;
+  const FOUNDING_SPOTS_LEFT = 16;
 
   document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("spots-text").textContent = `${FOUNDING_SPOTS_LEFT} of ${FOUNDING_SPOTS_TOTAL} Founding spots left`;
+  document.getElementById("spots-bar").style.width = `${(FOUNDING_SPOTS_LEFT / FOUNDING_SPOTS_TOTAL) * 100}%`;
 
   // Mobile menu
   const burger = document.getElementById("burger");
@@ -812,8 +927,10 @@
     const name = (data.get("captain_name") || "").trim();
     const email = (data.get("email") || "").trim();
     const mobile = (data.get("mobile") || "").trim();
-    if (!name || !email || !mobile) return showError("Please add the captain's name, mobile and email.");
+    if (!(data.get("team_name") || "").trim()) return showError("Please add the team name you want to claim.");
+    if (!name || !email || !mobile) return showError("Please add the team owner's name, mobile and email.");
     if (!/^\S+@\S+\.\S+$/.test(email)) return showError("That email doesn't look quite right.");
+    if (!data.get("understands_free_reservation")) return showError("Please tick the box to confirm you understand how name reservations work.");
 
     const nights = data.getAll("nights").join(", ");
     data.delete("nights");
@@ -822,7 +939,7 @@
     if (!FORM_ENDPOINT) {
       const lines = [];
       for (const [k, v] of data.entries()) if (k !== "_gotcha" && v) lines.push(`${k.replace(/_/g, " ")}: ${v}`);
-      const subject = encodeURIComponent(`Golfsies team interest: ${data.get("team_name") || name}`);
+      const subject = encodeURIComponent(`Golfsies team name claim: ${data.get("team_name")}`);
       window.location.href = `mailto:${FALLBACK_EMAIL}?subject=${subject}&body=${encodeURIComponent(lines.join("\n"))}`;
       form.style.display = "none";
       successEl.classList.add("show");
@@ -839,7 +956,7 @@
     } catch (err) {
       showError(`Something went wrong. Please try again, or email us at ${FALLBACK_EMAIL}.`);
       submitBtn.disabled = false;
-      submitBtn.innerHTML = 'Count us in <span class="arr">→</span>';
+      submitBtn.innerHTML = 'Claim our name <span class="arr">→</span>';
     }
   });
 </script>

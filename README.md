@@ -11,7 +11,13 @@ The site is one static file (`index.html`) and needs no build step.
 2. **Add the real logo.** Put the logo file in this folder (e.g. `logo.png`) and swap the text wordmark in the header for
    `<img src="logo.png" alt="Golfsies">`. The comment above the header link marks the spot.
 3. **Add photos (optional).** Drop `hero.jpg` (top banner) and `register.jpg` (registration section) into this folder and they appear automatically. Until then, those sections use navy and sunset gradients.
-4. **Check the details.** Launch timing ("Summer 2026–27"), the 8-team cap, loan clubs and the example team names are all stated on the page.
+4. **Check the details.** The founding prices ($59/month membership, $99 tournament entry), the 16 Founding Team spots, loan clubs and the example team names are all stated on the page.
+
+## Keeping it up to date
+
+- **Founding spots counter:** in `index.html`, change `FOUNDING_SPOTS_LEFT` as names are confirmed.
+- **Tournament dates:** replace the `TBA` boxes in the Tournament Calendar section once venues and dates are locked in.
+- **Rankings:** edit the rows in the Golfsies Rankings table after each event.
 
 ## Publish with GitHub Pages
 
