@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import { photos } from "@/lib/site";
 import { PhoneScorecard } from "./PhoneScorecard";
-import { Arrow, buttonClass, Container, Wordmark } from "./ui";
+import { Arrow, ButtonLink, Container, Wordmark } from "../ui";
 
 const lightXs = [60, 140, 220, 300, 380, 460, 540, 620, 700, 780, 860, 940, 1020, 1100, 1180];
 const lightYs = [78, 96, 108, 112, 106, 92, 77, 70, 72, 80, 88, 93, 94, 92, 90];
@@ -60,7 +60,9 @@ export function Hero() {
 
           <motion.h1 variants={rise} className="display mb-6 text-[clamp(56px,10vw,128px)] leading-[0.88] font-extrabold">
             3 Clubs.
+            {" "}
             <br />6 Holes.
+            {" "}
             <br />1 Hour.
           </motion.h1>
 
@@ -74,12 +76,12 @@ export function Hero() {
           </motion.p>
 
           <motion.div variants={rise} className="mt-9 flex flex-wrap gap-3">
-            <a href="#register" className={buttonClass("fairway")}>
+            <ButtonLink href="/claim" variant="fairway">
               Claim your team name <Arrow />
-            </a>
-            <a href="#own" className={buttonClass("ghost")}>
-              Own a team
-            </a>
+            </ButtonLink>
+            <ButtonLink href="/how-it-works" variant="ghost">
+              How it works
+            </ButtonLink>
           </motion.div>
         </motion.div>
         <div className="hidden lg:block">

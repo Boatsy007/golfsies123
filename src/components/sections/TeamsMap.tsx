@@ -1,6 +1,6 @@
 import { teams } from "@/lib/site";
-import { Reveal } from "./Reveal";
-import { Arrow, buttonClass, Container, SectionTitle } from "./ui";
+import { Reveal } from "../Reveal";
+import { Arrow, ButtonLink, Container, Eyebrow, SectionTitle } from "../ui";
 
 // Where each example team sits on the map: the dot on the coast and the label box.
 const pins: Record<string, { dot: [number, number]; label: [number, number]; seaSide?: boolean }> = {
@@ -19,15 +19,16 @@ export function TeamsMap() {
   return (
     <section id="teams" className="bg-cream py-16 sm:py-24">
       <Container className="grid items-center gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-        <Reveal className="text-center">
+        <Reveal>
+          <Eyebrow>Teams</Eyebrow>
           <SectionTitle>Rep your suburb</SectionTitle>
-          <p className="mx-auto mb-6.5 max-w-[36ch] text-[#2a333d]">
+          <p className="mb-6.5 max-w-[40ch] text-lg text-[#2a333d]">
             Pick a name, design a crest, get a kit and represent your suburb. Once a name is claimed it&apos;s yours, and no other team can use it.
           </p>
-          <a href="#register" className={buttonClass("solid")}>
+          <ButtonLink href="/claim">
             Claim your team <Arrow />
-          </a>
-          <p className="mt-3.5 text-[13px] text-muted">The map shows example team names. Founding Teams will appear here as names are confirmed.</p>
+          </ButtonLink>
+          <p className="mt-4 max-w-[40ch] text-[13px] text-muted">The map shows example team names. Founding Teams will appear here as names are confirmed.</p>
         </Reveal>
 
         <Reveal delay={0.1}>

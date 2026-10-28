@@ -51,10 +51,11 @@ export function RoundDiagram() {
               <line x1={gx} y1={gy} x2={gx} y2={gy - 30} stroke="#f5f0eb" strokeWidth="2.5" />
               <path d={`M${gx} ${gy - 30} L ${gx + 16} ${gy - 25} L ${gx} ${gy - 20} Z`} fill={party ? "#f27fb2" : "#f5f0eb"} />
               <g className="display font-bold" transform={`translate(${lx} ${ly})`}>
-                <text fontSize="22" fill={party ? "#f27fb2" : "#ffffff"}>
+                <text fontSize="26" fill={party ? "#f27fb2" : "#ffffff"}>
                   {party ? "6 · Party" : i + 1}
                 </text>
-                <text y="18" fontSize="14" fill="#c9d2dc">
+                {/* Too small to read once the diagram shrinks on phones; the list below covers distances. */}
+                <text y="20" fontSize="15" fill="#c9d2dc" className="max-sm:hidden">
                   {hole.metres}m
                 </text>
               </g>

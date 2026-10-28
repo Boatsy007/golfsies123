@@ -23,5 +23,7 @@ export default defineConfig({
     url: baseURL,
     reuseExistingServer: !process.env.CI,
     timeout: 180_000,
+    // Forms accept submissions without delivering them anywhere during tests.
+    env: { ENQUIRY_DRY_RUN: "1" },
   },
 });

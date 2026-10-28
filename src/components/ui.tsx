@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -24,9 +25,38 @@ export function buttonClass(variant: ButtonVariant = "solid", size: "md" | "sm" 
   );
 }
 
+// A link styled as a button. Internal paths use Next.js client-side navigation.
+export function ButtonLink({
+  href,
+  variant = "solid",
+  size = "md",
+  className,
+  children,
+}: {
+  href: string;
+  variant?: ButtonVariant;
+  size?: "md" | "sm";
+  className?: string;
+  children: ReactNode;
+}) {
+  const classes = cn(buttonClass(variant, size), className);
+  if (href.startsWith("/")) {
+    return (
+      <Link href={href} className={classes}>
+        {children}
+      </Link>
+    );
+  }
+  return (
+    <a href={href} className={classes}>
+      {children}
+    </a>
+  );
+}
+
 export function Arrow() {
   return (
-    <span aria-hidden="true" className="font-body text-lg">
+    <span aria-hidden="true" className="inline-block font-body text-lg">
       →
     </span>
   );
@@ -40,8 +70,68 @@ export function Reg() {
   return <span className="ml-0.5 align-super font-body text-[0.32em]">®</span>;
 }
 
-export function SectionTitle({ children, className }: { children: ReactNode; className?: string }) {
-  return <h2 className={cn("display mb-4 text-[clamp(36px,5vw,56px)] font-extrabold text-navy", className)}>{children}</h2>;
+export function SectionTitle({ children, className, as: Tag = "h2" }: { children: ReactNode; className?: string; as?: "h1" | "h2" }) {
+  return <Tag className={cn("display mb-4 text-[clamp(36px,5vw,56px)] font-extrabold text-navy", className)}>{children}</Tag>;
+}
+
+export function Eyebrow({ children, className }: { children: ReactNode; className?: string }) {
+  return <p className={cn("display mb-3 text-[15px] font-bold tracking-[0.12em] text-fairway-deep", className)}>{children}</p>;
+}
+
+// Shared header band for inner pages.
+export function PageHeader({ eyebrow, title, intro, children }: { eyebrow: string; title: ReactNode; intro: ReactNode; children?: ReactNode }) {
+  return (
+    <header className="relative overflow-hidden bg-navy-deep text-white">
+      <svg aria-hidden="true" viewBox="0 0 1440 120" preserveAspectRatio="none" className="pointer-events-none absolute right-0 bottom-0 left-0 h-16 w-full sm:h-24">
+        <path d="M0 80 C 300 40, 620 50, 900 75 S 1260 95, 1440 60 L 1440 120 L 0 120 Z" fill="#14304f" />
+      </svg>
+      {/* Title on the left; the intro (and any extra element) sits in the right column on large screens. */}
+      <Container className="relative grid gap-6 pt-14 pb-24 sm:pt-20 sm:pb-32 lg:grid-cols-[1.3fr_1fr] lg:items-end lg:gap-16">
+        <div>
+          <p className="display mb-4 text-[15px] font-bold tracking-[0.12em] text-fairway">{eyebrow}</p>
+          <h1 className="display text-[clamp(48px,7.5vw,96px)] leading-[0.9] font-extrabold">{title}</h1>
+        </div>
+        <div className="lg:border-l-2 lg:border-fairway lg:pb-2 lg:pl-8">
+          <div className="max-w-[48ch] text-lg text-white/80">{intro}</div>
+          {children && <div className="mt-6">{children}</div>}
+        </div>
+      </Container>
+    </header>
+  );
+}
+
+// Closing call to action used at the foot of every page.
+export function CtaBand({
+  title = "Sixteen Founding spots. Claim yours.",
+  body = "Reserving a team name is free. There's nothing to pay until the first event is confirmed.",
+  primary = { label: "Claim your team name", href: "/claim" },
+  secondary = { label: "How it works", href: "/how-it-works" },
+}: {
+  title?: string;
+  body?: string;
+  primary?: { label: string; href: string };
+  secondary?: { label: string; href: string };
+}) {
+  return (
+    <section className="bg-fairway py-16 sm:py-20" aria-labelledby="cta-title">
+      <Container className="grid items-end gap-8 lg:grid-cols-[1fr_auto]">
+        <div>
+          <h2 id="cta-title" className="display text-[clamp(40px,6vw,72px)] leading-[0.9] font-extrabold text-navy-ink">
+            {title}
+          </h2>
+          <p className="mt-4 max-w-[52ch] text-lg text-navy-ink/80">{body}</p>
+        </div>
+        <div className="flex flex-wrap gap-3 lg:justify-end">
+          <ButtonLink href={primary.href}>
+            {primary.label} <Arrow />
+          </ButtonLink>
+          <ButtonLink href={secondary.href} variant="outline">
+            {secondary.label}
+          </ButtonLink>
+        </div>
+      </Container>
+    </section>
+  );
 }
 
 export function BarTitle({ children, className, center }: { children: ReactNode; className?: string; center?: boolean }) {

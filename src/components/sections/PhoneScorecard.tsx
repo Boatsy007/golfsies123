@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { exampleScorecard } from "@/lib/site";
-import { cn } from "./ui";
+import { cn } from "../ui";
 
 export function PhoneScorecard() {
   const { team, position, field, holes } = exampleScorecard;

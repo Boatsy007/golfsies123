@@ -1,5 +1,5 @@
-import { Reveal } from "./Reveal";
-import { Arrow, BarTitle, buttonClass, Container } from "./ui";
+import { Reveal } from "../Reveal";
+import { Arrow, ButtonLink, Container, SectionTitle } from "../ui";
 
 const shirtPath = "M70 20 L40 32 L10 70 L36 88 L50 74 L50 186 L150 186 L150 74 L164 88 L190 70 L160 32 L130 20 C 124 36, 76 36, 70 20 Z";
 
@@ -41,20 +41,17 @@ export function Kits() {
   return (
     <section id="kits" className="bg-cream py-16 sm:py-24">
       <Container>
-        <BarTitle center>Team Kits</BarTitle>
-        <div className="mt-8 grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
-            <div className="display text-[clamp(48px,6vw,80px)] leading-[0.85] font-extrabold text-navy">
-              Look the part
-              <small className="mt-3 block text-[0.26em] tracking-wider text-tan-ink">Official Golfsies team kits</small>
-            </div>
+            <p className="display mb-3 text-[15px] font-bold tracking-[0.12em] text-fairway-deep">Team kits</p>
+            <SectionTitle>Look the part</SectionTitle>
             <p className="my-4 max-w-[40ch] text-[#2a333d]">
               Every team plays in a matching kit with its own name and crest. Company teams can put their logo on the front. Kits are made to
               order, with member pricing for team owners.
             </p>
-            <a href="#register" className={buttonClass("solid")}>
+            <ButtonLink href="/claim">
               Get your team kitted out <Arrow />
-            </a>
+            </ButtonLink>
           </Reveal>
           <Reveal delay={0.1} className="grid grid-cols-2 gap-3.5 sm:grid-cols-3">
             <Shirt color="#3e8e4e" badge="DB" badgeBg="#f5f0eb" badgeText="#3e8e4e" caption="Drop Bears" />
