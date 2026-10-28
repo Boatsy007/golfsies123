@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Golfsies | 6-Hole Social Golf League, Gold Coast</title>
+<meta name="description" content="3 Clubs. 6 Holes. 1 Hour. Then the Party Hole. Golfsies is a 6-hole social golf league for teams of mates and workmates, launching on the Gold Coast.">
+<meta property="og:title" content="Golfsies | 3 Clubs. 6 Holes. 1 Hour.">
+<meta property="og:description" content="A 6-hole social golf league for teams. Launching on the Gold Coast. Register your team's interest.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=Yellowtail&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1b3550;
+    --navy-deep: #12263b;
+    --cream: #f4f0e8;
+    --paper: #fbf9f4;
+    --fairway: #b8c76e;
+    --fairway-deep: #7d9440;
+    --sand: #e9d9a6;
+    --pink: #f27fb2;
+    --ink: #1b3550;
+    --muted: #5a6b7c;
+    --line: rgba(27, 53, 80, 0.15);
+    --radius: 18px;
+    --max: 1120px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+  /* Wordmark: swap for the real logo image when uploading (see .logo img) */
+  .wordmark {
+    font-family: "Yellowtail", cursive;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 1;
+  }
+  .reg { font-family: "Archivo", sans-serif; font-size: 0.35em; vertical-align: super; margin-left: 2px; }
+
+  /* Nav */
+  header.nav {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(244, 240, 232, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .logo { text-decoration: none; font-size: 34px; color: var(--navy); display: flex; align-items: center; }
+  .logo img { height: 40px; width: auto; }
+  .nav-links { display: flex; gap: 26px; align-items: center; }
+  .nav-links a { text-decoration: none; font-weight: 600; font-size: 15px; }
+  .nav-links a.hide-sm:hover { text-decoration: underline; }
+
+  .btn {
+    display: inline-block; text-decoration: none; cursor: pointer;
+    font: inherit; font-weight: 800; font-size: 16px; letter-spacing: 0.2px;
+    padding: 14px 24px; border-radius: 999px; border: 2px solid var(--navy);
+    background: var(--navy); color: var(--cream);
+    transition: transform .15s ease, background .15s ease, color .15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); background: var(--navy-deep); }
+  .btn.ghost { background: transparent; color: var(--navy); }
+  .btn.ghost:hover { background: var(--navy); color: var(--cream); }
+  .btn.small { padding: 10px 18px; font-size: 14px; }
+  .btn.light { background: var(--cream); color: var(--navy); border-color: var(--cream); }
+  .btn.light:hover { background: #fff; }
+
+  /* Hero */
+  .hero { padding: 72px 0 56px; position: relative; overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center; }
+  .kicker {
+    display: inline-block; font-weight: 800; font-size: 13px; letter-spacing: 1.6px;
+    text-transform: uppercase; background: var(--fairway); color: var(--navy);
+    padding: 6px 12px; border-radius: 999px; margin-bottom: 20px;
+  }
+  h1 {
+    font-weight: 900; font-size: clamp(42px, 7vw, 82px); line-height: 0.95;
+    letter-spacing: -2px; margin: 0 0 22px;
+  }
+  h1 .then { display: block; font-family: "Yellowtail", cursive; font-weight: 400; letter-spacing: 0; color: var(--fairway-deep); font-size: 0.72em; margin-top: 10px; }
+  .lede { font-size: 20px; color: var(--muted); max-width: 34ch; margin: 0 0 30px; }
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  /* Hole illustration card */
+  .hole-card {
+    background: var(--paper); border: 2px solid var(--navy); border-radius: 26px;
+    padding: 22px; box-shadow: 8px 8px 0 var(--navy);
+  }
+  .hole-card .meta { display: flex; justify-content: space-between; font-weight: 800; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+  .hole-card svg { width: 100%; height: auto; }
+  .hole-card .stats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); margin-top: 12px; padding-top: 12px; text-align: center; }
+  .stats b { display: block; font-size: 28px; font-weight: 900; line-height: 1; }
+  .stats span { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 700; }
+
+  /* Ticker */
+  .ticker { background: var(--navy); color: var(--cream); overflow: hidden; white-space: nowrap; padding: 14px 0; }
+  .ticker-track { display: inline-flex; gap: 40px; animation: scroll 30s linear infinite; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; font-size: 15px; }
+  .ticker-track span::after { content: "●"; margin-left: 40px; color: var(--fairway); font-size: 10px; vertical-align: middle; }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
+
+  /* Sections */
+  section { padding: 84px 0; }
+  .eyebrow { font-weight: 800; font-size: 13px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--fairway-deep); margin: 0 0 10px; }
+  h2 { font-weight: 900; font-size: clamp(32px, 4.6vw, 52px); line-height: 1; letter-spacing: -1.2px; margin: 0 0 18px; }
+  .section-lede { color: var(--muted); font-size: 19px; max-width: 58ch; margin: 0 0 44px; }
+
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; counter-reset: step; }
+  .step { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 22px; position: relative; }
+  .step::before {
+    counter-increment: step; content: counter(step);
+    display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%;
+    background: var(--navy); color: var(--cream); font-weight: 900; font-size: 18px; margin-bottom: 18px;
+  }
+  .step h3 { margin: 0 0 8px; font-size: 21px; font-weight: 800; line-height: 1.15; }
+  .step p { margin: 0; color: var(--muted); font-size: 16px; }
+
+  .rules { background: var(--navy); color: var(--cream); }
+  .rules h2, .rules .eyebrow { color: var(--cream); }
+  .rules .eyebrow { color: var(--fairway); }
+  .rules .section-lede { color: rgba(244, 240, 232, 0.75); }
+  .rule-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .rule { border: 1px solid rgba(244, 240, 232, 0.2); border-radius: var(--radius); padding: 26px; }
+  .rule .big { font-size: 44px; font-weight: 900; line-height: 1; color: var(--fairway); margin-bottom: 10px; }
+  .rule h3 { margin: 0 0 8px; font-size: 20px; font-weight: 800; }
+  .rule p { margin: 0; color: rgba(244, 240, 232, 0.78); font-size: 16px; }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .season { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+  .season li { display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); font-weight: 600; }
+  .season li span:last-child { color: var(--muted); font-weight: 500; text-align: right; }
+
+  .teams { display: flex; flex-wrap: wrap; gap: 10px; }
+  .team {
+    font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; font-size: 15px;
+    padding: 12px 18px; border-radius: 12px; border: 2px solid var(--navy); background: var(--paper);
+  }
+  .team:nth-child(3n+1) { background: var(--fairway); }
+  .team:nth-child(3n+2) { background: var(--pink); color: var(--navy); }
+  .team:nth-child(4n) { background: var(--sand); }
+
+  .company { background: var(--fairway); }
+  .company-inner { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
+  .company ul { margin: 0; padding-left: 20px; font-weight: 600; }
+  .company li { margin-bottom: 8px; }
+  .shirt { background: var(--navy); color: var(--cream); border-radius: 26px; padding: 30px; text-align: center; }
+  .shirt .wordmark { font-size: 46px; }
+  .shirt .sponsor { margin-top: 18px; border: 2px dashed rgba(244,240,232,0.5); border-radius: 12px; padding: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; font-size: 13px; }
+
+  /* FAQ */
+  .faq { max-width: 820px; }
+  details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+  summary { cursor: pointer; font-weight: 800; font-size: 19px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-size: 26px; line-height: 1; font-weight: 500; }
+  details[open] summary::after { content: "–"; }
+  details p { color: var(--muted); margin: 12px 0 0; }
+
+  /* Form */
+  .register { background: var(--navy); color: var(--cream); }
+  .register h2 { color: var(--cream); }
+  .register .eyebrow { color: var(--fairway); }
+  .register .section-lede { color: rgba(244, 240, 232, 0.78); }
+  .form-card { background: var(--paper); color: var(--ink); border-radius: 26px; padding: 34px; }
+  form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 20px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field.full { grid-column: 1 / -1; }
+  label, .legend { font-weight: 700; font-size: 14px; }
+  .opt { font-weight: 500; color: var(--muted); }
+  input[type=text], input[type=email], input[type=tel], select, textarea {
+    font: inherit; font-size: 16px; color: var(--ink);
+    padding: 12px 14px; border-radius: 12px; border: 1.5px solid var(--line); background: #fff; width: 100%;
+  }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--navy); box-shadow: 0 0 0 3px rgba(184, 199, 110, 0.6); }
+  textarea { min-height: 96px; resize: vertical; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip input { position: absolute; opacity: 0; pointer-events: none; }
+  .chip span {
+    display: inline-block; padding: 9px 16px; border-radius: 999px; border: 1.5px solid var(--line);
+    font-weight: 700; font-size: 15px; cursor: pointer; background: #fff; user-select: none;
+  }
+  .chip input:checked + span { background: var(--navy); color: var(--cream); border-color: var(--navy); }
+  .chip input:focus-visible + span { box-shadow: 0 0 0 3px rgba(184, 199, 110, 0.8); }
+  .form-foot { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 6px; }
+  .form-foot small { color: var(--muted); max-width: 46ch; }
+  .hp { position: absolute; left: -9999px; }
+  .success { display: none; text-align: center; padding: 30px 10px; }
+  .success.show { display: block; }
+  .success .wordmark { font-size: 54px; margin-bottom: 8px; }
+  .success h3 { font-size: 28px; font-weight: 900; margin: 0 0 8px; }
+  .success p { color: var(--muted); margin: 0 auto; max-width: 44ch; }
+  .error { color: #b3261e; font-weight: 700; grid-column: 1 / -1; display: none; }
+  .error.show { display: block; }
+
+  /* Footer */
+  footer { padding: 46px 0; border-top: 1px solid var(--line); }
+  .foot { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center; }
+  .foot .wordmark { font-size: 36px; }
+  .foot-links { display: flex; gap: 20px; flex-wrap: wrap; font-weight: 600; font-size: 15px; }
+  .fine { color: var(--muted); font-size: 13px; margin-top: 18px; }
+
+  /* Responsive */
+  @media (max-width: 920px) {
+    .hero-grid, .split, .company-inner { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .rule-grid { grid-template-columns: 1fr; }
+    .hero { padding-top: 48px; }
+  }
+  @media (max-width: 600px) {
+    .wrap { padding: 0 16px; }
+    .hide-sm { display: none; }
+    .steps { grid-template-columns: 1fr; }
+    form { grid-template-columns: 1fr; }
+    .form-card { padding: 22px; }
+    section { padding: 64px 0; }
+    .lede { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <!-- To use the real logo: replace the span below with <img src="logo.png" alt="Golfsies"> -->
+    <a class="logo" href="#top" aria-label="Golfsies home"><span class="wordmark">Golfsies<span class="reg">®</span></span></a>
+    <nav class="nav-links">
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#company">Company teams</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <a class="btn small" href="#register">Register interest</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">Launching on the Gold Coast · Summer 2026–27</span>
+        <h1>3 Clubs.<br>6 Holes.<br>1 Hour.<span class="then">Then the Party Hole.</span></h1>
+        <p class="lede">A 6-hole social golf league for teams of mates and workmates. You don't need to be good at golf, and you don't need a full set of clubs.</p>
+        <div class="cta-row">
+          <a class="btn" href="#register">Register your team</a>
+          <a class="btn ghost" href="#how">How it works</a>
+        </div>
+      </div>
+
+      <div class="hole-card" aria-hidden="true">
+        <div class="meta"><span>Hole 6</span><span>The Party Hole</span></div>
+        <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="260" rx="16" fill="#fbf9f4"/>
+          <path d="M40 200 C 60 150, 120 150, 170 135 S 280 70, 330 70 C 365 70, 375 105, 350 125 C 320 150, 260 150, 220 175 S 110 235, 60 225 C 40 220, 32 212, 40 200 Z" fill="#b8c76e" stroke="#1b3550" stroke-width="3"/>
+          <ellipse cx="318" cy="96" rx="42" ry="30" fill="#9fb35a" stroke="#1b3550" stroke-width="3"/>
+          <path d="M262 150 c 10 -14, 30 -14, 34 0 c 2 10, -26 14, -34 0 z" fill="#e9d9a6" stroke="#1b3550" stroke-width="2.5"/>
+          <rect x="52" y="196" width="34" height="18" rx="5" fill="#fbf9f4" stroke="#1b3550" stroke-width="2.5"/>
+          <circle cx="324" cy="100" r="4" fill="#1b3550"/>
+          <line x1="324" y1="100" x2="324" y2="48" stroke="#1b3550" stroke-width="3"/>
+          <path d="M324 48 L 356 57 L 324 66 Z" fill="#f27fb2" stroke="#1b3550" stroke-width="2.5"/>
+          <path d="M80 200 Q 200 60, 318 96" fill="none" stroke="#1b3550" stroke-width="2" stroke-dasharray="6 7"/>
+          <text x="58" y="240" font-family="Archivo, sans-serif" font-weight="800" font-size="13" fill="#1b3550">TEE · 115m</text>
+          <g transform="translate(36 38)">
+            <rect width="104" height="30" rx="15" fill="#1b3550"/>
+            <text x="52" y="20" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="12" fill="#f4f0e8">DOUBLE POINTS</text>
+          </g>
+        </svg>
+        <div class="stats">
+          <div><b>6</b><span>Holes</span></div>
+          <div><b>3</b><span>Clubs each</span></div>
+          <div><b>&lt;60</b><span>Minutes</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Team scramble</span><span>No full set needed</span><span>Twilight weeknights</span><span>10-week season</span><span>Ladder &amp; finals</span><span>Team uniforms</span><span>Beginners welcome</span><span>Party hole</span>
+      <span>Team scramble</span><span>No full set needed</span><span>Twilight weeknights</span><span>10-week season</span><span>Ladder &amp; finals</span><span>Team uniforms</span><span>Beginners welcome</span><span>Party hole</span>
+    </div>
+  </div>
+
+  <section id="how">
+    <div class="wrap">
+      <p class="eyebrow">How it works</p>
+      <h2>Golf, minus the boring bits.</h2>
+      <p class="section-lede">Traditional golf takes four-plus hours and a bag full of clubs. Golfsies takes an hour after work, three clubs and your best mates.</p>
+      <div class="steps">
+        <div class="step"><h3>Build your crew</h3><p>Teams of 4 on the course, with up to 6 on your roster so nobody's stuck when someone can't make it.</p></div>
+        <div class="step"><h3>Grab 3 clubs</h3><p>Pick any three: a wood, a 7-iron and a putter works well. No clubs? We've got loan sets.</p></div>
+        <div class="step"><h3>Play 6 short holes</h3><p>Team scramble on holes of 100–130m. Everyone hits, you play the best shot, and the round's done in under an hour.</p></div>
+        <div class="step"><h3>Hit the Party Hole</h3><p>Hole 6 is right by the clubhouse, with music and double points. Then stay for a drink and check the ladder.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rules">
+    <div class="wrap">
+      <p class="eyebrow">The rules</p>
+      <h2>Simple enough for first-timers.<br>Competitive enough for everyone.</h2>
+      <p class="section-lede">Easy-play rules keep things moving and keep it fun, whatever your handicap (or lack of one).</p>
+      <div class="rule-grid">
+        <div class="rule"><div class="big">3</div><h3>Club limit</h3><p>Everyone carries a maximum of three clubs. It levels the field and keeps play quick.</p></div>
+        <div class="rule"><div class="big">1m</div><h3>No-penalty drop</h3><p>Missed the fairway? Drop it one metre back onto the short grass with no penalty, and keep moving.</p></div>
+        <div class="rule"><div class="big">2×</div><h3>Party Hole points</h3><p>Hole 6 is worth double, so no match is over until the last putt drops.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">The season</p>
+        <h2>10 weeks. One trophy. Bragging rights for a year.</h2>
+        <p class="section-lede" style="margin-bottom:28px">Head-to-head team matches every week on a twilight weeknight, with ladder points, finals and a grand final.</p>
+        <ul class="season">
+          <li><span>Weeks 1–8</span><span>Regular season matches</span></li>
+          <li><span>Week 9</span><span>Semi-finals (top 4)</span></li>
+          <li><span>Week 10</span><span>Grand final + presentation</span></li>
+          <li><span>Ladder points</span><span>Win 3 · Draw 2 · Show up 1</span></li>
+          <li><span>Teams per league</span><span>Capped at 8</span></li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow">Pick a name. Get a kit.</p>
+        <h2>Every team needs an identity.</h2>
+        <p class="section-lede" style="margin-bottom:24px">Every team gets its own name, logo and uniform. Here are a few we've cooked up already:</p>
+        <div class="teams">
+          <span class="team">Birdie Bandits</span>
+          <span class="team">Hitters</span>
+          <span class="team">Barras</span>
+          <span class="team">Drop Bears</span>
+          <span class="team">Galahs</span>
+          <span class="team">Stingers</span>
+          <span class="team">Strikers</span>
+          <span class="team">Your team?</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="company" id="company">
+    <div class="wrap company-inner">
+      <div>
+        <p class="eyebrow" style="color:var(--navy)">Company teams</p>
+        <h2>The best team-building is a grudge match.</h2>
+        <p class="section-lede" style="color:var(--navy)">Enter a team from your workplace and get an after-work social that people actually want to go to.</p>
+        <ul>
+          <li>Your company logo on your team's uniforms</li>
+          <li>A 10-week team-building calendar sorted</li>
+          <li>Network with other Gold Coast businesses at the Party Hole</li>
+          <li>Enter more than one team and settle the office rivalry properly</li>
+        </ul>
+        <p style="margin-top:28px"><a class="btn" href="#register">Register a company team</a></p>
+      </div>
+      <div class="shirt" aria-hidden="true">
+        <div class="wordmark">Golfsies</div>
+        <div class="sponsor">Your logo here</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h2>Questions? Fair enough.</h2>
+      <div class="faq">
+        <details><summary>Do I need to be good at golf?</summary><p>Not at all. The team scramble means everyone plays the best shot, so beginners and experienced golfers contribute on every hole. Plenty of players have never played a full round before.</p></details>
+        <details><summary>Do I need my own clubs?</summary><p>You need three at most. If you don't have any, we'll have loan sets at the course.</p></details>
+        <details><summary>Where and when is it played?</summary><p>On twilight weeknights at a Gold Coast course, finishing before dark. We're locking in venues now. Register your interest and you'll be the first to hear.</p></details>
+        <details><summary>How much does it cost?</summary><p>Pricing will be released when registrations open. Teams who register interest now will get early-bird pricing.</p></details>
+        <details><summary>What if I don't have a team?</summary><p>Register as a solo player or a pair and we'll match you with others to make up a team.</p></details>
+        <details><summary>Are uniforms compulsory?</summary><p>Yes, it's half the fun. Each team gets a matching kit, made to order before the season starts.</p></details>
+        <details><summary>I run a golf course or club. Can we host Golfsies?</summary><p>We'd love to talk. Golfsies brings new players onto your course on quiet weeknights, and you keep the bar takings. Email <a href="mailto:rohan@golfsies.com.au?subject=Hosting%20Golfsies">rohan@golfsies.com.au</a>.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="register" id="register">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <p class="eyebrow">Season 1 · Gold Coast</p>
+        <h2>Register your team's interest.</h2>
+        <p class="section-lede">Each league is capped at 8 teams. Register now and you'll get first access to spots, early-bird pricing, and an invite to our launch night.</p>
+        <p class="section-lede" style="font-size:16px">There's no payment and no commitment. We'll just keep you posted.</p>
+      </div>
+
+      <div class="form-card">
+        <form id="interest-form" novalidate>
+          <div class="field full">
+            <label for="team">Team name <span class="opt">(you can change it later)</span></label>
+            <input type="text" id="team" name="team_name" placeholder="e.g. The Drop Bears" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="name">Captain's name *</label>
+            <input type="text" id="name" name="captain_name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="phone">Mobile *</label>
+            <input type="tel" id="phone" name="mobile" required autocomplete="tel" placeholder="04xx xxx xxx">
+          </div>
+          <div class="field full">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+
+          <div class="field full">
+            <span class="legend">How many players?</span>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="players" value="Just me (match me to a team)"><span>Just me</span></label>
+              <label class="chip"><input type="radio" name="players" value="2-3"><span>2–3</span></label>
+              <label class="chip"><input type="radio" name="players" value="4"><span>4</span></label>
+              <label class="chip"><input type="radio" name="players" value="5-6"><span>5–6</span></label>
+            </div>
+          </div>
+
+          <div class="field full">
+            <span class="legend">Which nights could you play? <span class="opt">(pick any)</span></span>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="nights" value="Mon"><span>Mon</span></label>
+              <label class="chip"><input type="checkbox" name="nights" value="Tue"><span>Tue</span></label>
+              <label class="chip"><input type="checkbox" name="nights" value="Wed"><span>Wed</span></label>
+              <label class="chip"><input type="checkbox" name="nights" value="Thu"><span>Thu</span></label>
+              <label class="chip"><input type="checkbox" name="nights" value="Weekend afternoon"><span>Weekend arvo</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="type">Team type</label>
+            <select id="type" name="team_type">
+              <option>Group of friends</option>
+              <option>Company / work team</option>
+              <option>Sports club / social club</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="experience">Golf experience</label>
+            <select id="experience" name="experience">
+              <option>Mostly beginners</option>
+              <option>A mix</option>
+              <option>Mostly regular golfers</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="suburb">Suburb <span class="opt">(helps us choose venues)</span></label>
+            <input type="text" id="suburb" name="suburb" placeholder="e.g. Burleigh Heads" autocomplete="address-level2">
+          </div>
+
+          <div class="field full">
+            <label for="heard">How did you hear about us?</label>
+            <select id="heard" name="heard_from">
+              <option>Instagram</option>
+              <option>TikTok</option>
+              <option>Facebook</option>
+              <option>A friend</option>
+              <option>At a golf course</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="msg">Anything else? <span class="opt">(optional)</span></label>
+            <textarea id="msg" name="message" placeholder="Questions, ideas, or the trash talk you've prepared for the grand final"></textarea>
+          </div>
+
+          <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <p class="error" id="form-error" role="alert"></p>
+
+          <div class="form-foot">
+            <small>We'll only use your details to contact you about Golfsies. No spam, ever.</small>
+            <button class="btn" type="submit" id="submit-btn">Count us in</button>
+          </div>
+        </form>
+
+        <div class="success" id="success" role="status" aria-live="polite">
+          <div class="wordmark">Golfsies</div>
+          <h3>You're on the list!</h3>
+          <p>We'll be in touch soon with venues, dates and early-bird pricing. Now go and pick your three clubs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <span class="wordmark">Golfsies<span class="reg">®</span></span>
+      <div class="foot-links">
+        <a href="https://www.instagram.com/golfsies" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@golfsies" target="_blank" rel="noopener">TikTok</a>
+        <a href="mailto:rohan@golfsies.com.au">rohan@golfsies.com.au</a>
+      </div>
+    </div>
+    <p class="fine">© <span id="year">2026</span> Golfsies. Golfsies® is a registered trade mark. A 6-hole social league, Gold Coast, Queensland.</p>
+  </div>
+</footer>
+
+<script>
+  // ---- SETUP ----
+  // Paste your form endpoint here (e.g. from formspree.io: "https://formspree.io/f/xxxxxxx").
+  // If left empty, submissions open the visitor's email app addressed to FALLBACK_EMAIL instead.
+  const FORM_ENDPOINT = "";
+  const FALLBACK_EMAIL = "rohan@golfsies.com.au";
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const form = document.getElementById("interest-form");
+  const errorEl = document.getElementById("form-error");
+  const successEl = document.getElementById("success");
+  const submitBtn = document.getElementById("submit-btn");
+
+  function showError(msg) {
+    errorEl.textContent = msg;
+    errorEl.classList.add("show");
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    errorEl.classList.remove("show");
+
+    const data = new FormData(form);
+    if (data.get("_gotcha")) return; // bot filled the hidden field
+
+    const name = (data.get("captain_name") || "").trim();
+    const email = (data.get("email") || "").trim();
+    const mobile = (data.get("mobile") || "").trim();
+    if (!name || !email || !mobile) return showError("Please add the captain's name, mobile and email.");
+    if (!/^\S+@\S+\.\S+$/.test(email)) return showError("That email doesn't look quite right.");
+
+    const nights = data.getAll("nights").join(", ");
+    data.delete("nights");
+    data.set("nights", nights);
+
+    if (!FORM_ENDPOINT) {
+      const lines = [];
+      for (const [k, v] of data.entries()) if (k !== "_gotcha" && v) lines.push(`${k.replace(/_/g, " ")}: ${v}`);
+      const subject = encodeURIComponent(`Golfsies team interest: ${data.get("team_name") || name}`);
+      window.location.href = `mailto:${FALLBACK_EMAIL}?subject=${subject}&body=${encodeURIComponent(lines.join("\n"))}`;
+      form.style.display = "none";
+      successEl.classList.add("show");
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending…";
+    try {
+      const res = await fetch(FORM_ENDPOINT, { method: "POST", body: data, headers: { Accept: "application/json" } });
+      if (!res.ok) throw new Error("Bad response");
+      form.style.display = "none";
+      successEl.classList.add("show");
+    } catch (err) {
+      showError(`Something went wrong. Please try again, or email us at ${FALLBACK_EMAIL}.`);
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Count us in";
+    }
+  });
+</script>
+</body>
+</html>
