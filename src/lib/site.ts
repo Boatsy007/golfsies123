@@ -7,7 +7,7 @@ export const contactEmail = "rohan@golfsies.com.au";
 export const formEndpoint = process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? "";
 
 // Background photos. Put the files in /public and set the paths, e.g. hero: "/hero.jpg".
-// Left empty, those sections use navy and sunset gradients instead.
+// Left empty, those sections use solid navy backgrounds instead.
 export const photos = { hero: "", register: "" };
 
 // Update by hand as Founding Team names are confirmed.
@@ -51,8 +51,6 @@ export const teams: Team[] = [
   { name: "Galahs", short: "GA", suburb: "Burleigh", color: "#f27fb2", text: "#1b3550" },
   { name: "Strikers", short: "SK", suburb: "Palm Beach", color: "#c8302e", text: "#ffffff" },
 ];
-
-export const rankings = teams.map((team) => ({ team, events: 0, wins: 0, points: 0 }));
 
 export type EventBadge = "free" | "members" | "coming" | "top";
 
@@ -165,27 +163,21 @@ export const faqs = [
 
 export const partnerCards = [
   {
-    icon: "⛳",
-    title: "Host a league",
-    body: "Bring 32–48 new players onto your course on a quiet weeknight. You keep the bar takings.",
+    title: "Host a tournament",
+    body: "Bring 32–64 new players onto your course on a quiet weeknight or weekend afternoon. You keep the bar takings.",
     cta: "Talk venues",
     href: `mailto:${contactEmail}?subject=Hosting%20Golfsies`,
-    gradient: "linear-gradient(160deg,#2c5a3a,#14301f)",
   },
   {
-    icon: "★",
     title: "Sponsor the league",
-    body: "Put your brand in front of Gold Coast teams every week, from the Party Hole prize to the grand final.",
+    body: "Put your brand in front of Gold Coast teams at every event, from the Party Hole prize to the Golfsies Championship.",
     cta: "Become a partner",
     href: `mailto:${contactEmail}?subject=Sponsoring%20Golfsies`,
-    gradient: "linear-gradient(160deg,#2b4d70,#10233a)",
   },
   {
-    icon: "◆",
     title: "Enter a company team",
     body: "An after-work social people actually want to go to, with your logo on the kits.",
     cta: "Register a team",
     href: "#register",
-    gradient: "linear-gradient(160deg,#c45a86,#6b2448)",
   },
 ];

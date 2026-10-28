@@ -1,10 +1,12 @@
 import type { ReactNode } from "react";
+import { twMerge } from "tailwind-merge";
 
+// Joins class names; when two Tailwind classes conflict, the later one wins.
 export function cn(...classes: (string | false | null | undefined)[]) {
-  return classes.filter(Boolean).join(" ");
+  return twMerge(classes.filter(Boolean).join(" "));
 }
 
-type ButtonVariant = "solid" | "outline" | "fairway" | "ghost" | "onDark" | "tan";
+type ButtonVariant = "solid" | "outline" | "fairway" | "ghost" | "onDark";
 
 const buttonVariants: Record<ButtonVariant, string> = {
   solid: "border-navy bg-navy text-white hover:bg-navy-deep",
@@ -12,7 +14,6 @@ const buttonVariants: Record<ButtonVariant, string> = {
   fairway: "border-fairway bg-fairway text-navy-ink hover:bg-fairway-light",
   ghost: "border-white/60 bg-white/10 text-white hover:bg-white/20",
   onDark: "border-fairway bg-transparent text-white hover:bg-fairway hover:text-navy-ink",
-  tan: "border-tan bg-tan text-white hover:bg-tan-deep",
 };
 
 export function buttonClass(variant: ButtonVariant = "solid", size: "md" | "sm" = "md") {

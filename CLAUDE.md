@@ -1,4 +1,5 @@
 @AGENTS.md
+@docs/website-standards.md
 
 # Golfsies website
 

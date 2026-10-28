@@ -63,13 +63,11 @@ export function PhoneScorecard() {
           ))}
         </motion.div>
 
-        <div className="display mx-3 mt-1.5 flex items-baseline justify-between border-t border-white/15 px-2 pt-2.5 text-base font-extrabold text-white">
+        <div className="display mx-3 mt-1.5 mb-4 flex items-baseline justify-between border-t border-white/15 px-2 pt-2.5 text-base font-extrabold text-white">
           <span>Total points</span>
           <b className="text-[26px] text-fairway">{total}</b>
         </div>
-        <div className="display mx-3 mt-2 mb-4.5 rounded-lg bg-fairway p-2.5 text-center text-[15px] font-extrabold text-navy-ink">
-          Submit scorecard
-        </div>
+        <p className="mx-5 mb-5 text-[11px] leading-snug text-white/70">Birdie 3 · Par 2 · Bogey 1. The Party Hole doubles it.</p>
       </div>
     </motion.div>
   );

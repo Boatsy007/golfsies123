@@ -44,9 +44,9 @@ export function Kits() {
         <BarTitle center>Team Kits</BarTitle>
         <div className="mt-8 grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
-            <div className="display text-[clamp(56px,8vw,110px)] leading-[0.82] font-extrabold text-navy">
+            <div className="display text-[clamp(48px,6vw,80px)] leading-[0.85] font-extrabold text-navy">
               Look the part
-              <small className="mt-3 block text-[0.26em] tracking-wider text-tan">Official Golfsies team kits</small>
+              <small className="mt-3 block text-[0.26em] tracking-wider text-tan-ink">Official Golfsies team kits</small>
             </div>
             <p className="my-4 max-w-[40ch] text-[#2a333d]">
               Every team plays in a matching kit with its own name and crest. Company teams can put their logo on the front. Kits are made to

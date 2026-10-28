@@ -6,13 +6,16 @@
   --color-navy-ink: #0b1a2b;
   --color-cream: #f5f0eb;
   --color-paper: #faf8f5;
+  /* tan is decorative only; tan-ink is the text-safe version (4.5:1 on cream) */
   --color-tan: #af9b8c;
-  --color-tan-deep: #9a8676;
+  --color-tan-ink: #7a6a5d;
   --color-fairway: #b8c76e;
   --color-fairway-light: #cad78a;
-  --color-fairway-deep: #6f8636;
+  /* text-safe green: 5.3:1 on cream, 6:1 on white */
+  --color-fairway-deep: #556a24;
   --color-pink: #f27fb2;
-  --color-coral: #e2543f;
+  /* 5.2:1 with white text */
+  --color-coral: #c43d2a;
   --color-ink: #141a21;
   --color-muted: #5d6670;
   --color-line: rgb(20 26 33 / 0.12);
@@ -41,6 +44,16 @@
   /* keep anchor targets clear of the sticky nav */
   [id] {
     scroll-margin-top: 80px;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-fairway-deep);
+    outline-offset: 3px;
+  }
+  .bg-navy :focus-visible,
+  .bg-navy-ink :focus-visible,
+  .bg-navy-deep :focus-visible,
+  .bg-coral :focus-visible {
+    outline-color: var(--color-fairway);
   }
 }
 

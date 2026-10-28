@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { photos } from "@/lib/site";
+import { PhoneScorecard } from "./PhoneScorecard";
 import { Arrow, buttonClass, Container, Wordmark } from "./ui";
 
 const lightXs = [60, 140, 220, 300, 380, 460, 540, 620, 700, 780, 860, 940, 1020, 1100, 1180];
@@ -17,13 +18,10 @@ export function Hero() {
     <section
       className="relative overflow-hidden text-white"
       style={{
-        background: [
-          "linear-gradient(90deg, rgba(11,26,43,0.92) 0%, rgba(11,26,43,0.6) 55%, rgba(11,26,43,0.25) 100%)",
-          photos.hero && `url('${photos.hero}') center / cover no-repeat`,
-          "radial-gradient(120% 90% at 80% 10%, #2b4d70 0%, #10233a 55%, #0b1a2b 100%)",
-        ]
-          .filter(Boolean)
-          .join(", "),
+        // With a photo, a dark scrim keeps the headline readable; without one, a solid night-sky navy.
+        background: photos.hero
+          ? `linear-gradient(90deg, rgba(11,26,43,0.92) 0%, rgba(11,26,43,0.55) 60%, rgba(11,26,43,0.3) 100%), url('${photos.hero}') center / cover no-repeat`
+          : "#10233a",
       }}
     >
       <svg className="pointer-events-none absolute top-0 left-0 h-3/5 w-full" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true">
@@ -47,7 +45,7 @@ export function Hero() {
         <path d="M1130 40 L1172 52 L1130 64 Z" fill="#f27fb2" />
       </svg>
 
-      <Container className="relative z-10 pt-16 pb-28 sm:pt-24 sm:pb-36">
+      <Container className="relative z-10 grid items-center gap-10 pt-16 pb-28 sm:pt-24 sm:pb-36 lg:grid-cols-[1.25fr_0.75fr]">
         <motion.div initial="hidden" animate="show" transition={{ staggerChildren: 0.12 }}>
           <motion.div
             variants={rise}
@@ -55,7 +53,7 @@ export function Hero() {
           >
             <Wordmark className="skew-x-[8deg] text-[34px]" />
             <span className="display skew-x-[8deg] border-l-2 border-tan pl-3.5 text-xl leading-none font-extrabold">
-              <small className="block text-[13px] tracking-widest text-tan">Founding Teams</small>
+              <small className="block text-[13px] tracking-widest text-tan-ink">Founding Teams</small>
               Gold Coast
             </span>
           </motion.div>
@@ -84,6 +82,9 @@ export function Hero() {
             </a>
           </motion.div>
         </motion.div>
+        <div className="hidden lg:block">
+          <PhoneScorecard />
+        </div>
       </Container>
     </section>
   );

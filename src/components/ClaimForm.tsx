@@ -76,13 +76,9 @@ export function ClaimForm() {
       id="register"
       className="py-16 text-white sm:py-24"
       style={{
-        background: [
-          "linear-gradient(180deg, rgba(11,26,43,0.7), rgba(11,26,43,0.92))",
-          photos.register && `url('${photos.register}') center / cover no-repeat`,
-          "linear-gradient(160deg, #3a3a44 0%, #6b3f2a 60%, #c06a2c 100%)",
-        ]
-          .filter(Boolean)
-          .join(", "),
+        background: photos.register
+          ? `linear-gradient(180deg, rgba(11,26,43,0.75), rgba(11,26,43,0.92)), url('${photos.register}') center / cover no-repeat`
+          : "#0b1a2b",
       }}
     >
       <Container>

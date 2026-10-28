@@ -16,7 +16,7 @@ export function AnnouncementBar() {
         </p>
         <a
           href="#register"
-          className="rounded-full bg-white px-3.5 py-1 text-[13px] font-bold whitespace-nowrap text-coral uppercase tracking-wide"
+          className="rounded-full bg-white px-3.5 py-1 text-[13px] font-bold whitespace-nowrap text-navy uppercase tracking-wide hover:bg-cream"
         >
           Claim your team
         </a>
