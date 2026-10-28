@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #1b3550;
+  --color-navy-deep: #10233a;
+  --color-navy-ink: #0b1a2b;
+  --color-cream: #f5f0eb;
+  --color-paper: #faf8f5;
+  --color-tan: #af9b8c;
+  --color-tan-deep: #9a8676;
+  --color-fairway: #b8c76e;
+  --color-fairway-light: #cad78a;
+  --color-fairway-deep: #6f8636;
+  --color-pink: #f27fb2;
+  --color-coral: #e2543f;
+  --color-ink: #141a21;
+  --color-muted: #5d6670;
+  --color-line: rgb(20 26 33 / 0.12);
+
+  --animate-marquee: marquee 36s linear infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+@theme inline {
+  --font-body: var(--font-archivo), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-barlow), "Arial Narrow", sans-serif;
+  --font-script: var(--font-yellowtail), cursive;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-paper font-body text-ink antialiased;
+  }
+  /* keep anchor targets clear of the sticky nav */
+  [id] {
+    scroll-margin-top: 80px;
+  }
+}
+
+@utility display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}

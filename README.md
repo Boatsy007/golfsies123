@@ -1,38 +1,76 @@
 # Golfsies website
 
-Landing page for **Golfsies®**, a 6-hole social golf league on the Gold Coast.
-The site is one static file (`index.html`) and needs no build step.
+Website for **Golfsies®**, the Gold Coast's 6-hole social golf tournament circuit: own a team, enter tournaments, climb the rankings.
 
-## Before going live
+| Tool | Role |
+|---|---|
+| Claude Code | Main AI developer (project instructions in `CLAUDE.md`) |
+| VS Code | Code editor (recommended extensions in `.vscode/`) |
+| Next.js + TypeScript | Website framework |
+| Tailwind CSS | Styling |
+| Motion | Animations |
+| Playwright | Automated browser testing |
+| Vercel | Deployment |
 
-1. **Connect the form.** Create a free form at [formspree.io](https://formspree.io), then in `index.html` set
-   `const FORM_ENDPOINT = "https://formspree.io/f/your-id";`
-   Until this is set, submitting opens the visitor's email app addressed to `rohan@golfsies.com.au`.
-2. **Add the real logo.** Put the logo file in this folder (e.g. `logo.png`) and swap the text wordmark in the header for
-   `<img src="logo.png" alt="Golfsies">`. The comment above the header link marks the spot.
-3. **Add photos (optional).** Drop `hero.jpg` (top banner) and `register.jpg` (registration section) into this folder and they appear automatically. Until then, those sections use navy and sunset gradients.
-4. **Check the details.** The founding prices ($59/month membership, $99 tournament entry), the 16 Founding Team spots, loan clubs and the example team names are all stated on the page.
+## Getting started
 
-## Keeping it up to date
+You need [Node.js](https://nodejs.org) 20 or newer.
 
-- **Founding spots counter:** in `index.html`, change `FOUNDING_SPOTS_LEFT` as names are confirmed.
-- **Tournament dates:** replace the `TBA` boxes in the Tournament Calendar section once venues and dates are locked in.
-- **Rankings:** edit the rows in the Golfsies Rankings table after each event.
+```bash
+npm install
+```
 
-## Publish with GitHub Pages
+```bash
+npm run dev
+```
 
-1. In this repo go to **Settings → Pages**.
-2. Under **Build and deployment**, choose **Deploy from a branch**, branch `main`, folder `/ (root)`, then save.
-3. The site appears at `https://boatsy007.github.io/golfsies123/` within a minute or two.
+Then open http://localhost:3000. Pages reload as you edit.
 
-### Use golfsies.com.au
+Opening the folder in VS Code will suggest the recommended extensions (Claude Code, ESLint, Tailwind CSS IntelliSense, Playwright).
 
-1. In **Settings → Pages → Custom domain**, enter `golfsies.com.au` and save (this adds a `CNAME` file).
-2. At your domain registrar, add DNS records:
-   - `A` records for `@` pointing to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - a `CNAME` record for `www` pointing to `boatsy007.github.io`
-3. Once DNS has updated, tick **Enforce HTTPS**.
+## Editing content
 
-## Preview locally
+Almost everything you'll want to change lives in **`src/lib/site.ts`**:
 
-Open `index.html` in a browser.
+- prices (`pricing`) and the Founding spots counter (`foundingSpots.left`)
+- example teams, rankings, tournament calendar, rules, news items and FAQs
+- contact email and social links
+- background photos (`photos`): put a file in `public/` (e.g. `public/hero.jpg`) and set `photos.hero = "/hero.jpg"`
+
+Each page section is its own component in `src/components/`, put together in `src/app/page.tsx`. Colours and fonts are set in `src/app/globals.css`.
+
+To use the real logo, add it to `public/` and swap the `Wordmark` in `src/components/Nav.tsx` for a Next.js `<Image>`.
+
+## The claim form
+
+Copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_FORM_ENDPOINT` to a form service URL, for example a free [Formspree](https://formspree.io) form. Without it, the form opens the visitor's email app addressed to `rohan@golfsies.com.au`.
+
+## Checks and tests
+
+```bash
+npm run lint
+```
+
+```bash
+npm run typecheck
+```
+
+The first time you run the browser tests, install the test browser:
+
+```bash
+npx playwright install chromium
+```
+
+```bash
+npm run test:e2e
+```
+
+The tests run on a desktop and a mobile screen size. `npm run test:e2e:ui` opens Playwright's visual test runner.
+
+## Deploying to Vercel
+
+1. Sign in at [vercel.com](https://vercel.com) with your GitHub account and choose **Add New → Project**.
+2. Import the `golfsies123` repository. Vercel detects Next.js automatically, so keep the default settings.
+3. Under **Environment Variables**, add `NEXT_PUBLIC_FORM_ENDPOINT` with your form URL.
+4. Click **Deploy**. Every push to `main` then redeploys the site, and every pull request gets its own preview link.
+5. To use your domain, go to **Project → Settings → Domains**, add `golfsies.com.au`, and follow the DNS instructions Vercel shows for your registrar.
