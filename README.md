@@ -10,7 +10,8 @@ The site is one static file (`index.html`) and needs no build step.
    Until this is set, submitting opens the visitor's email app addressed to `rohan@golfsies.com.au`.
 2. **Add the real logo.** Put the logo file in this folder (e.g. `logo.png`) and swap the text wordmark in the header for
    `<img src="logo.png" alt="Golfsies">`. The comment above the header link marks the spot.
-3. **Check the details.** Launch timing ("Summer 2026–27"), the 8-team cap and loan clubs are all stated on the page.
+3. **Add photos (optional).** Drop `hero.jpg` (top banner) and `register.jpg` (registration section) into this folder and they appear automatically. Until then, those sections use navy and sunset gradients.
+4. **Check the details.** Launch timing ("Summer 2026–27"), the 8-team cap, loan clubs and the example team names are all stated on the page.
 
 ## Publish with GitHub Pages
 
