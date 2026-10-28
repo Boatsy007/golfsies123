@@ -1011,7 +1011,7 @@ section{scroll-margin-top:90px}
     if (!FORM_ENDPOINT) {
       const lines = [];
       for (const [k, v] of data.entries()) if (k !== "_gotcha" && v) lines.push(`${k.replace(/_/g, " ")}: ${v}`);
-      const subject = encodeURIComponent(`Golfsies team name claim: ${data.get("team_name")}`);
+      const subject = encodeURIComponent(`Golfsies founding team name request: ${data.get("team_name")}`);
       window.location.href = `mailto:${FALLBACK_EMAIL}?subject=${subject}&body=${encodeURIComponent(lines.join("\n"))}`;
       showError("Your email app should open with a prepared request. Please press Send in your email app. Your name is NOT reserved until we reply to confirm it. If nothing opens, email " + FALLBACK_EMAIL + " directly.");
       return;
@@ -1029,7 +1029,7 @@ section{scroll-margin-top:90px}
     } catch (err) {
       showError(`Something went wrong. Please try again, or email us at ${FALLBACK_EMAIL}.`);
       submitBtn.disabled = false;
-      submitBtn.innerHTML = 'Claim our name <span class="arr">→</span>';
+      submitBtn.innerHTML = 'Request our name <span class="arr">→</span>';
     }
   });
 </script>
