@@ -8,6 +8,9 @@
 <meta property="og:title" content="Golfsies | 3 Clubs. 6 Holes. 1 Hour.">
 <meta property="og:description" content="Own a team, enter 6-hole tournaments and climb the Golfsies Rankings. Claim your Founding Team name free.">
 <meta property="og:type" content="website">
+<meta name="theme-color" content="#03251c">
+<meta property="og:locale" content="en_AU">
+<meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Barlow+Condensed:wght@500;600;700;800&family=Yellowtail&display=swap" rel="stylesheet">
@@ -430,6 +433,9 @@ section{scroll-margin-top:90px}
 @media(max-width:700px){.nav .wrap{height:68px}.logo{font-size:36px}.hero,.hero .wrap.hero-inner{min-height:620px}.hero .wrap.hero-inner{padding-top:75px;padding-bottom:100px}.hero{background-position:63% center!important}.hero h1{font-size:clamp(70px,16vw,110px);letter-spacing:-2px}.hero-punch{font-size:24px}.hero-description{font-size:14px}.hero-corner{display:none}.format-grid{grid-template-columns:repeat(2,1fr)}.format-grid>div:nth-child(3){border-right:1px solid rgba(255,255,255,.2)}.format-grid>div:nth-child(even){border:0}.story-grid{grid-template-columns:1fr 1fr}.story-copy{grid-column:1/-1}.story-tile{min-height:250px}.story-tile:last-child{grid-column:1/-1;min-height:220px}.story-tile strong{font-size:30px}.announce .wrap{padding-right:32px}.announce p{font-size:10px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
+
+/* Launch-readiness, responsiveness and accessibility */
+:focus-visible{outline:3px solid #ffce00!important;outline-offset:4px}a,button,summary,input,select,textarea{touch-action:manipulation}button,input,select,textarea{font:inherit}.form-foot small a{font-weight:700;text-decoration:underline}.error.show{display:block;background:#fff3dc;border-left:4px solid #bb6b00;padding:12px 14px;line-height:1.5}.plan .price-note{font-weight:600;opacity:.9}.spots{max-width:100%;flex-wrap:wrap;justify-content:center;text-align:center}.story-tile{background-color:#275442}footer .links{flex-wrap:wrap}@media(max-width:700px){.hero .wrap.hero-inner{min-height:650px}.hero .cta .btn{justify-content:center}.hero-description{max-width:35ch}.format-grid strong{line-height:1.4}.story-grid{gap:10px}.story-copy{padding-right:0}.story-tile{min-height:230px}.story-tile strong{font-size:28px}.form-foot{gap:16px}}@media(max-width:420px){.hero h1{font-size:68px}.hero .btn{width:100%}.hero .cta{flex-direction:column}.format-grid>div{padding-left:8px;padding-right:8px}}
 </style>
 </head>
 <body>
@@ -555,7 +561,7 @@ section{scroll-margin-top:90px}
     <div class="wrap">
       <div class="own-head">
         <h2 class="sec-title">Own a team</h2>
-        <p>Your team name, your crest, your roster, your ranking. Founding Teams lock in the lowest price for as long as they stay members.</p>
+        <p>Your team name, your crest, your roster, your ranking. Founding Teams get first pick of names and access to a proposed founding rate. Final prices and terms will be confirmed before anyone pays.</p>
         <div class="spots"><span id="spots-text">16 of 16 Founding spots left</span><span class="meter"><i id="spots-bar" style="width:100%"></i></span></div>
       </div>
       <div class="plans">
@@ -563,9 +569,9 @@ section{scroll-margin-top:90px}
           <span class="kicker">Founding Team · Limited to 16</span>
           <h3>Team Membership</h3>
           <div class="price">$59<small>/month</small></div>
-          <p class="price-note">Founding price, locked in. Nothing to pay until the first event is confirmed.</p>
+          <p class="price-note">Indicative monthly pricing only. Final founding terms confirmed before launch. No payment to express interest.</p>
           <ul>
-            <li>Your team name and crest, reserved in Golfsies</li>
+            <li>Your team name and crest, subject to confirmation</li>
             <li>Team page with roster, results and ranking</li>
             <li>Roster of up to 8 players</li>
             <li>Members-only tournament entry</li>
@@ -578,12 +584,12 @@ section{scroll-margin-top:90px}
           <span class="kicker">Members only</span>
           <h3>Tournament Entry</h3>
           <div class="price">$99<small>/team</small></div>
-          <p class="price-note">Per event, for a team of 4. That's about $25 each.</p>
+          <p class="price-note">Indicative per-event price for a team of 4. Final price to be confirmed.</p>
           <ul>
-            <li>6-hole team scramble, about 2 hours with the Party Hole</li>
+            <li>6-hole team scramble, approximately 1 hour of play; allow extra event time</li>
             <li>Shotgun start, so everyone finishes together</li>
             <li>Trophies, prizes and ranking points</li>
-            <li>Loan clubs available</li>
+            <li>Equipment requirements confirmed before each event</li>
           </ul>
           <a class="btn outline" href="#tournaments">See tournaments <span class="arr">→</span></a>
         </div>
@@ -601,7 +607,7 @@ section{scroll-margin-top:90px}
           <a class="btn outline" href="#register">Get an invite <span class="arr">→</span></a>
         </div>
       </div>
-      <p class="own-foot">Founding prices will be confirmed before the first event. Reserving a team name is free and doesn't commit you to anything. Full membership terms, including how to cancel, will be sent before any payment is taken.</p>
+      <p class="own-foot">The $59 monthly and $99 per-event figures are planning estimates, not current offers. Founding prices will be confirmed before the first event. Reserving a team name is free and doesn't commit you to anything. Full membership terms, including how to cancel, will be sent before any payment is taken.</p>
     </div>
   </section>
 
@@ -610,7 +616,7 @@ section{scroll-margin-top:90px}
     <div class="wrap teams">
       <div class="copy">
         <h2 class="sec-title">The teams</h2>
-        <p>Pick a name, design a crest, get a kit and represent your suburb. Once a name is claimed it's yours, and no other team can use it.</p>
+        <p>Pick a name, design a crest, get a kit and represent your suburb. Team names are requests until reviewed and confirmed by Golfsies; duplicate requests are resolved manually.</p>
         <a class="btn" href="#register">Claim your team <span class="arr">→</span></a>
         <p class="note">Example teams shown. Founding Teams will be revealed as names are claimed.</p>
       </div>
@@ -684,7 +690,7 @@ section{scroll-margin-top:90px}
               </tbody>
             </table>
           </div>
-          <p style="font-size:13px;color:var(--muted);margin:10px 0 0">Example teams shown. Every team starts on zero.</p>
+          <p style="font-size:13px;color:var(--muted);margin:10px 0 0">Pre-season illustration only. These are fictional example teams, not registered participants or actual results.</p>
         </div>
       </div>
     </div>
@@ -696,8 +702,8 @@ section{scroll-margin-top:90px}
       <h2 class="bar-title center">Team Kits</h2>
       <div class="kits">
         <div class="kits-copy">
-          <div class="big">Look the part<small>Official Golfsies team kits</small></div>
-          <p>Every team plays in a matching kit with its own name and crest. Company teams can put their logo on the front. Kits are made to order, with member pricing for team owners.</p>
+          <div class="big">Look the part<small>Concept team kits · designs and availability to be confirmed</small></div>
+          <p>Teams will be able to order matching kit designs featuring their name and crest, subject to availability. Company teams can put their logo on the front. Kits are made to order, with member pricing for team owners.</p>
           <a class="btn" href="#register">Get your team kitted out <span class="arr">→</span></a>
         </div>
         <div class="shirts">
@@ -767,8 +773,8 @@ section{scroll-margin-top:90px}
       </style>
       <details><summary>What do I get with a team membership?</summary><p>Your team name and crest reserved in Golfsies, a team page, a roster of up to 8 players, members-only tournament entry, ranking points at every event, and member kit pricing.</p></details>
       <details><summary>Do I pay anything now?</summary><p>No. Reserving a Founding Team name is free. We'll confirm pricing and send the membership terms before the first event, and you only pay once you choose to join.</p></details>
-      <details><summary>Can I cancel?</summary><p>Yes. Memberships are month to month, and the full terms, including how to cancel, will be sent before any payment is taken.</p></details>
-      <details><summary>Who owns the team?</summary><p>The person who takes out the membership is the team owner. They hold the right to that team name and crest within Golfsies, and they manage the roster. Golfsies® itself remains a registered trade mark of Golfsies.</p></details>
+      <details><summary>Can I cancel?</summary><p>Yes. Cancellation arrangements will be included in the final membership terms before any payment is taken.</p></details>
+      <details><summary>Who owns the team?</summary><p>Under the proposed model, the person who takes out the membership is the team owner. They hold the right to that team name and crest within Golfsies, and they manage the roster. Golfsies® itself remains a registered trade mark of Golfsies.</p></details>
       <details><summary>Do I need to be good at golf?</summary><p>No. In a team scramble everyone plays the best shot, so beginners and regular golfers contribute on every hole.</p></details>
       <details><summary>Do I need my own clubs?</summary><p>You only need three. If you don't have any, we'll have loan sets at the course.</p></details>
       <details><summary>Where and when are tournaments played?</summary><p>At Gold Coast courses, on twilight weeknights in summer and weekend afternoons in winter. We're locking in venues now, and Founding Teams will hear first.</p></details>
@@ -787,7 +793,7 @@ section{scroll-margin-top:90px}
         <p>Reserve your team name free. There's no payment and no commitment. You'll get the founding price, first entry to tournaments, and an invite to the Try Golfsies Day.</p>
       </div>
       <div class="form-card">
-        <form id="interest-form" novalidate>
+        <form id="interest-form" novalidate aria-label="Founding Team request">
           <div class="field full">
             <label for="team">Team name you want to claim *</label>
             <input type="text" id="team" name="team_name" required placeholder="e.g. The Drop Bears" autocomplete="off">
@@ -863,12 +869,12 @@ section{scroll-margin-top:90px}
             <label for="msg">Anything else? <span class="opt">(optional)</span></label>
             <textarea id="msg" name="message" placeholder="Questions, ideas, or the trash talk you've prepared for the grand final"></textarea>
           </div>
-          <label class="consent"><input type="checkbox" id="consent" name="understands_free_reservation" value="yes"><span>I understand this reserves my team name for free. Names are first in, first served and confirmed by email. Membership is optional, and I won't be charged unless I choose to join after receiving the terms.</span></label>
+          <label class="consent"><input type="checkbox" id="consent" name="understands_free_reservation" value="yes"><span>I understand this is a free request, not a confirmed reservation. Golfsies will check name availability and contact me to confirm. There is no payment or obligation to join.</span></label>
           <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
           <p class="error" id="form-error" role="alert"></p>
           <div class="form-foot">
-            <small>We'll only use your details to contact you about Golfsies. No spam, ever.</small>
-            <button class="btn" type="submit" id="submit-btn">Claim our name <span class="arr">→</span></button>
+            <small>We'll only use your details to contact you about Golfsies. See our <a href="privacy.html">privacy notice</a>. No payment details collected.</small>
+            <button class="btn" type="submit" id="submit-btn">Request our name <span class="arr">→</span></button>
           </div>
         </form>
         <div class="success" id="success" role="status" aria-live="polite">
@@ -926,7 +932,7 @@ section{scroll-margin-top:90px}
     <div class="wrap">
       <div class="big">See you at the Party Hole</div>
       <div class="links">
-        <a href="#own">Own a team</a><i>/</i><a href="#tournaments">Tournaments</a><i>/</i><a href="#rankings">Rankings</a><i>/</i><a href="#faq">FAQ</a><i>/</i><a href="#partners">Partnerships</a><i>/</i><a href="mailto:rohan@golfsies.com.au">Contact</a>
+        <a href="#own">Own a team</a><i>/</i><a href="#tournaments">Tournaments</a><i>/</i><a href="#rankings">Rankings</a><i>/</i><a href="#faq">FAQ</a><i>/</i><a href="#partners">Partnerships</a><i>/</i><a href="mailto:rohan@golfsies.com.au">Contact</a><i>/</i><a href="privacy.html">Privacy</a>
       </div>
       <div class="social">
         <span class="wordmark">Golfsies</span>
@@ -950,8 +956,8 @@ section{scroll-margin-top:90px}
   const FOUNDING_SPOTS_LEFT = 16;
 
   document.getElementById("year").textContent = new Date().getFullYear();
-  document.getElementById("spots-text").textContent = `${FOUNDING_SPOTS_LEFT} of ${FOUNDING_SPOTS_TOTAL} Founding spots left`;
-  document.getElementById("spots-bar").style.width = `${(FOUNDING_SPOTS_LEFT / FOUNDING_SPOTS_TOTAL) * 100}%`;
+  document.getElementById("spots-text").textContent = `Up to ${FOUNDING_SPOTS_TOTAL} Founding Teams · availability confirmed by email`;
+  document.getElementById("spots-bar").style.width = "100%";
 
   // Mobile menu
   const burger = document.getElementById("burger");
@@ -1007,8 +1013,7 @@ section{scroll-margin-top:90px}
       for (const [k, v] of data.entries()) if (k !== "_gotcha" && v) lines.push(`${k.replace(/_/g, " ")}: ${v}`);
       const subject = encodeURIComponent(`Golfsies team name claim: ${data.get("team_name")}`);
       window.location.href = `mailto:${FALLBACK_EMAIL}?subject=${subject}&body=${encodeURIComponent(lines.join("\n"))}`;
-      form.style.display = "none";
-      successEl.classList.add("show");
+      showError("Your email app should open with a prepared request. Please press Send in your email app. Your name is NOT reserved until we reply to confirm it. If nothing opens, email " + FALLBACK_EMAIL + " directly.");
       return;
     }
 
@@ -1019,6 +1024,8 @@ section{scroll-margin-top:90px}
       if (!res.ok) throw new Error("Bad response");
       form.style.display = "none";
       successEl.classList.add("show");
+      successEl.querySelector("h3")?.replaceChildren(document.createTextNode("Request received"));
+      successEl.querySelector("p")?.replaceChildren(document.createTextNode("Thanks! We will review your preferred team name and email you to confirm availability. No payment has been taken."));
     } catch (err) {
       showError(`Something went wrong. Please try again, or email us at ${FALLBACK_EMAIL}.`);
       submitBtn.disabled = false;
